@@ -26,7 +26,8 @@ internal fun MetroSettingsPanel(themeMode: String, onThemeChange: (String) -> Un
         val panelWidth = minOf(380.dp, maxWidth * .90f)
         // Le tiroir suit le bord de début RTL ; son contenu et l'écran restent en français LTR.
         CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
-            ModalNavigationDrawer(drawerState = drawer, drawerContent = {
+            // Ne pas concurrencer le défilement vertical avec une ouverture horizontale.
+            ModalNavigationDrawer(drawerState = drawer, gesturesEnabled = drawer.isOpen, drawerContent = {
                 CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
                     ModalDrawerSheet(modifier = Modifier.width(panelWidth).fillMaxHeight(),
                         drawerShape = RoundedCornerShape(topStart = 24.dp, bottomStart = 24.dp)) {

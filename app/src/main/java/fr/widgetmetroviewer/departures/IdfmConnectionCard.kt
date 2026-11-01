@@ -21,30 +21,50 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+/** État conservé par la page : le défilement ne réinitialise ni la saisie ni un test. */
+internal class IdfmConnectionUiState {
+    val references = mutableStateOf(emptyList<IdfmStationReference>())
+    val input = mutableStateOf("")
+    val visible = mutableStateOf(false)
+    val busy = mutableStateOf(true)
+    val stored = mutableStateOf(false)
+    val unreadable = mutableStateOf(false)
+    val status = mutableStateOf("Lecture de la configuration…")
+    val failure = mutableStateOf(false)
+    var initialized = false
+}
+
 @Composable
 internal fun IdfmConnectionCard(selectedStation: String? = null, selectedLine: String? = null,
+                                uiState: IdfmConnectionUiState = remember { IdfmConnectionUiState() },
+                                actionScope: kotlinx.coroutines.CoroutineScope = rememberCoroutineScope(),
                                 onDataChanged: (Boolean) -> Unit = {}) {
     val notifyDataChanged by rememberUpdatedState(onDataChanged)
     val context = LocalContext.current
     val store = remember { IdfmKeyStore(context.applicationContext) }
-    val scope = rememberCoroutineScope()
+    val scope = actionScope
     val api = remember { IdfmApiClient(requestAllowed = { MetroPhoneState.canRefresh(context) }) }
     val usageStore = remember { IdfmApiUsage(context.applicationContext) }
-    var references by remember { mutableStateOf(emptyList<IdfmStationReference>()) }
-    val target = references.firstOrNull {
-        selectedLine != null && it.lineRef == MetroLineReferences.forLine(selectedLine) && selectedStation != null &&
-            MetroCatalog.normalize(it.name) == MetroCatalog.normalize(selectedStation)
-    } ?: references.firstOrNull()
+    var references by uiState.references
+    val target = remember(references, selectedLine, selectedStation) {
+        val lineRef = selectedLine?.let(MetroLineReferences::forLine)
+        val stationName = selectedStation?.let(MetroCatalog::normalize)
+        references.firstOrNull {
+            lineRef != null && it.lineRef == lineRef && stationName != null &&
+                MetroCatalog.normalize(it.name) == stationName
+        } ?: references.firstOrNull()
+    }
     // Jamais rememberSaveable : aucun secret dans l'état sauvegardé de l'activité.
-    var input by remember { mutableStateOf("") }
-    var visible by remember { mutableStateOf(false) }
-    var busy by remember { mutableStateOf(true) }
-    var stored by remember { mutableStateOf(false) }
-    var unreadable by remember { mutableStateOf(false) }
-    var status by remember { mutableStateOf("Lecture de la configuration…") }
-    var failure by remember { mutableStateOf(false) }
+    var input by uiState.input
+    var visible by uiState.visible
+    var busy by uiState.busy
+    var stored by uiState.stored
+    var unreadable by uiState.unreadable
+    var status by uiState.status
+    var failure by uiState.failure
 
     LaunchedEffect(store) {
+        if (uiState.initialized) return@LaunchedEffect
         val local = withContext(Dispatchers.IO) {
             runCatching { IdfmStationReference.load(context.applicationContext) }.getOrDefault(emptyList())
         }
@@ -62,6 +82,7 @@ internal fun IdfmConnectionCard(selectedStation: String? = null, selectedLine: S
             }
         }
         busy = false
+        uiState.initialized = true
     }
 
     Card(shape = RoundedCornerShape(18.dp),

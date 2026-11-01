@@ -19,8 +19,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -35,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.isActive
 import java.time.Instant
 import kotlinx.coroutines.Dispatchers
@@ -115,12 +115,17 @@ private fun MetroConfigurationScreen(
     var selectedStationName by rememberSaveable { mutableStateOf(initialStation) }
     var savedMessage by rememberSaveable { mutableStateOf(false) }
     var departuresRevision by remember { mutableIntStateOf(0) }
+    val listState = rememberLazyListState()
+    val connectionState = remember { IdfmConnectionUiState() }
 
     suspend fun load() {
         busy = true
         error = null
         try {
-            catalog = withContext(Dispatchers.IO) { MetroCatalog.load(context.applicationContext) }
+            catalog = withContext(Dispatchers.IO) {
+                MetroDirections.get(context.applicationContext)
+                MetroCatalog.load(context.applicationContext)
+            }
         } catch (exception: Exception) {
             if (exception is kotlinx.coroutines.CancellationException) throw exception
             error = "Impossible de lire le catalogue. Réessaie le chargement."
@@ -129,19 +134,23 @@ private fun MetroConfigurationScreen(
     LaunchedEffect(Unit) { load() }
 
     val lines = catalog?.lines.orEmpty()
-    val line = lines.firstOrNull { it.id == selectedLineId }
-        ?: lines.firstOrNull { it.name == selectedLineName }
-    val station = line?.stations?.firstOrNull {
-        selectedStationName?.let { name -> MetroCatalog.normalize(it.name) == MetroCatalog.normalize(name) } == true
+    val line = remember(lines, selectedLineId, selectedLineName) {
+        lines.firstOrNull { it.id == selectedLineId } ?: lines.firstOrNull { it.name == selectedLineName }
+    }
+    val station = remember(line, selectedStationName) {
+        val name = selectedStationName?.let(MetroCatalog::normalize)
+        line?.stations?.firstOrNull { name != null && MetroCatalog.normalize(it.name) == name }
     }
 
     MetroSettingsPanel(themeMode, onThemeChange) { openSettings ->
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-        Column(
-            modifier = Modifier.fillMaxSize().safeDrawingPadding()
-                .verticalScroll(rememberScrollState()).padding(16.dp),
+        LazyColumn(
+            state = listState,
+            modifier = Modifier.fillMaxSize().safeDrawingPadding(),
+            contentPadding = PaddingValues(16.dp),
             verticalArrangement = Arrangement.spacedBy(14.dp)
         ) {
+            item(key = "header") {
             Row(verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 Surface(shape = CircleShape, color = MaterialTheme.colorScheme.surface,
@@ -159,18 +168,20 @@ private fun MetroConfigurationScreen(
                     Icon(androidx.compose.ui.res.painterResource(R.drawable.ic_settings), "Paramètres")
                 }
             }
-            if (busy) {
+            }
+            if (busy) item(key = "catalog_loading") {
                 LinearProgressIndicator(Modifier.fillMaxWidth())
                 Text("Préparation des lignes et stations…")
             }
-            if (catalog == null) MetroPlaceholder()
-            error?.let { Text(it, color = MaterialTheme.colorScheme.error) }
-            if (error != null) {
+            if (catalog == null) item(key = "catalog_placeholder") { MetroPlaceholder() }
+            error?.let { message -> item(key = "catalog_error") { Text(message, color = MaterialTheme.colorScheme.error) } }
+            if (error != null) item(key = "catalog_retry") {
                 OutlinedButton(enabled = !busy, onClick = { scope.launch { load() } }) {
                     Text("Réessayer")
                 }
             }
             if (catalog != null) {
+                item(key = "line") {
                 SelectionMenu(
                     title = "CHOISIR LA LIGNE",
                     selected = line?.let { "Ligne ${MetroLineStyles.label(it.name)}" } ?: "Choisir une ligne",
@@ -186,6 +197,8 @@ private fun MetroConfigurationScreen(
                         savedMessage = false
                     }
                 )
+                }
+                item(key = "station") {
                 SelectionMenu(
                     title = "CHOISIR LA STATION",
                     selected = station?.name ?: "Choisir une station",
@@ -198,12 +211,16 @@ private fun MetroConfigurationScreen(
                     enabled = !busy && line != null,
                     onSelect = { selectedStationName = it.name; savedMessage = false }
                 )
-                Text("APERÇU DU WIDGET", fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                }
+                item(key = "preview_title") { Text("APERÇU DU WIDGET", fontWeight = FontWeight.Bold, fontSize = 13.sp) }
+                item(key = "preview") {
                 if (line != null && station != null) {
-                    MetroPreview(station, line.name, departuresRevision)
+                    MetroPreview(station, line.name, departuresRevision, listState)
                 } else {
                     MetroPlaceholder()
                 }
+                }
+                item(key = "save") {
                 Button(
                     enabled = !busy && line != null && station != null,
                     onClick = {
@@ -217,10 +234,12 @@ private fun MetroConfigurationScreen(
                 ) {
                     Text("ENREGISTRER MA CONFIGURATION", fontWeight = FontWeight.Bold)
                 }
-                if (savedMessage) Text("✓ Configuration enregistrée et widget actualisé",
-                    color = if (themeMode == "dark" || (themeMode == "auto" && isSystemInDarkTheme())) Color(0xFF81D89E) else Color(0xFF237A43))
+                }
+                if (savedMessage) item(key = "saved") { Text("✓ Configuration enregistrée et widget actualisé",
+                    color = if (themeMode == "dark" || (themeMode == "auto" && isSystemInDarkTheme())) Color(0xFF81D89E) else Color(0xFF237A43)) }
             }
-            IdfmConnectionCard(selectedStation = station?.name, selectedLine = line?.name,
+            item(key = "connection") {
+            IdfmConnectionCard(uiState = connectionState, actionScope = scope, selectedStation = station?.name, selectedLine = line?.name,
                 onDataChanged = { keyChanged ->
                     if (keyChanged) {
                         MetroDeparturesRepository.get(context).invalidateConnectionState()
@@ -229,9 +248,12 @@ private fun MetroConfigurationScreen(
                     departuresRevision++
                     MetroWidgetProvider.refreshAll(context)
                 })
+            }
+            item(key = "source") {
             TextButton(onClick = {
                 context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(MetroCatalog.SOURCE)))
             }) { Text("Source : Île-de-France Mobilités · Licence ODbL") }
+            }
         }
     }
     }
@@ -292,8 +314,13 @@ private fun <T> SelectionMenu(
         }
     }
     if (searchable && expanded) {
-        val normalizedQuery = MetroCatalog.normalize(query)
-        val filtered = values.filter { normalizedQuery in MetroCatalog.normalize(label(it)) }
+        val searchIndex = remember(values, label) {
+            values.map { it to MetroCatalog.normalize(label(it)) }
+        }
+        val filtered = remember(searchIndex, query) {
+            val normalizedQuery = MetroCatalog.normalize(query)
+            searchIndex.filter { normalizedQuery in it.second }.map { it.first }
+        }
         AlertDialog(
             onDismissRequest = { expanded = false; query = "" },
             title = { Text("Choisir une station") },
@@ -342,7 +369,8 @@ private fun <T> SelectionMenu(
 }
 
 @Composable
-private fun MetroPreview(station: MetroStation, line: String, revision: Int) {
+private fun MetroPreview(station: MetroStation, line: String, revision: Int,
+                         scrollState: androidx.compose.foundation.lazy.LazyListState) {
     val context = LocalContext.current
     val nominal = remember(station.name, line) { MetroDirections.get(context).forStation(station.name, line) }
     var result by remember(station.name, line, revision) { mutableStateOf<DeparturesResult?>(null) }
@@ -403,27 +431,55 @@ private fun MetroPreview(station: MetroStation, line: String, revision: Int) {
             result = DeparturesResult(DeparturesState.UNAVAILABLE, message = "Passages indisponibles. Réessaie plus tard.")
         } finally { loading = false }
     }
-    val display = remember(station.name, line, nominal, result, now, loading) {
-        MetroPanelPresentation.build(station.name, line, nominal, result, now, loading)
+    var display by remember(station.name, line) {
+        mutableStateOf(MetroPanelPresentation.build(station.name, line, nominal, null, now, true))
     }
-    val panel = remember(station.name, line, display) {
-        MetroPanelRenderer.bitmap(station.name, line, display).asImageBitmap()
+    LaunchedEffect(station.name, line, nominal, result, now, loading, scrollState) {
+        // Attendre la fin du geste ou de l'inertie avant de modifier le panneau.
+        snapshotFlow { scrollState.isScrollInProgress }.first { scrolling -> !scrolling }
+        display = withContext(Dispatchers.Default) {
+            MetroPanelPresentation.build(station.name, line, nominal, result, now, loading)
+        }
+    }
+    // Le dessin du panneau ne doit pas bloquer les gestes sur le thread principal.
+    // Garder le dernier panneau pendant le rendu, mais jamais celui d'une autre station.
+    var panel by remember(station.name, line) { mutableStateOf<androidx.compose.ui.graphics.ImageBitmap?>(null) }
+    LaunchedEffect(station.name, line, display) {
+        val rendered = withContext(Dispatchers.Default) {
+            MetroPanelRenderer.bitmap(station.name, line, display).asImageBitmap()
+        }
+        snapshotFlow { scrollState.isScrollInProgress }.first { scrolling -> !scrolling }
+        panel = rendered
     }
     val informationFallback = if (display.informationNotices.isEmpty()) display.information else ""
-    val informationViews = remember(line, display.informationNotices, informationFallback) {
-        MetroInformationViews.build(context, line, display)
+    var informationViews by remember(station.name, line) { mutableStateOf<android.widget.RemoteViews?>(null) }
+    LaunchedEffect(station.name, line, display.informationNotices, informationFallback) {
+        val rendered = withContext(Dispatchers.Default) {
+            MetroInformationViews.build(context, line, display)
+        }
+        snapshotFlow { scrollState.isScrollInProgress }.first { scrolling -> !scrolling }
+        informationViews = rendered
     }
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        if (loading) LinearProgressIndicator(Modifier.fillMaxWidth())
+        // La mise à jour ne change pas la hauteur du contenu pendant le défilement.
+        Box(Modifier.fillMaxWidth().height(4.dp)) {
+            if (loading) LinearProgressIndicator(Modifier.fillMaxSize())
+        }
         Box(Modifier.fillMaxWidth().aspectRatio(MetroPanelRenderer.ASPECT_RATIO)) {
-            Image(bitmap = panel, contentDescription = MetroPanelRenderer.description(station.name, line, display),
-                modifier = Modifier.matchParentSize())
-            AndroidView(modifier = Modifier.matchParentSize(), factory = { viewContext ->
-                informationViews.apply(viewContext, android.widget.FrameLayout(viewContext)).also { it.tag = informationViews }
+            val renderedPanel = panel
+            if (renderedPanel == null) {
+                MetroPlaceholder()
+            } else {
+                Image(bitmap = renderedPanel, contentDescription = MetroPanelRenderer.description(station.name, line, display),
+                    modifier = Modifier.matchParentSize())
+            }
+            val renderedInformation = informationViews
+            if (renderedInformation != null) AndroidView(modifier = Modifier.matchParentSize(), factory = { viewContext ->
+                renderedInformation.apply(viewContext, android.widget.FrameLayout(viewContext)).also { it.tag = renderedInformation }
             }, update = { view ->
-                if (view.tag !== informationViews) {
-                    informationViews.reapply(context, view)
-                    view.tag = informationViews
+                if (view.tag !== renderedInformation) {
+                    renderedInformation.reapply(context, view)
+                    view.tag = renderedInformation
                 }
             })
             IconButton(onClick = { forceNext = true; manualRefresh++ }, enabled = !loading,
@@ -438,9 +494,8 @@ private fun MetroPreview(station: MetroStation, line: String, revision: Int) {
             color = MaterialTheme.colorScheme.onSurfaceVariant)
         if (result?.state == DeparturesState.UNSUPPORTED) Text("Le temps réel n’est pas encore disponible pour cette station.",
             fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        result?.traffic?.let { traffic ->
-            val board = MetroTrafficPresentation.build(traffic, now)
-            val messages = board.notices
+        run {
+            val messages = display.informationNotices
             if (messages.isNotEmpty()) {
                 var expanded by remember(station.name, line) { mutableStateOf(false) }
                 TextButton(onClick = { expanded = !expanded }) {
