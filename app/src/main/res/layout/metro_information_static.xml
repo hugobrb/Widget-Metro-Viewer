@@ -1,0 +1,1 @@
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/widget_info_flipper" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FAFAFA" android:autoStart="false" android:animateFirstView="false" android:measureAllChildren="false" />

@@ -1,0 +1,35 @@
+# Gradle, Kotlin and generated build outputs
+.gradle/
+.kotlin/
+**/build/
+.externalNativeBuild/
+.cxx/
+/captures/
+
+# Local Android SDK and IDE settings
+local.properties
+.idea/
+*.iml
+
+# Secrets and signing material (never commit)
+.env
+.env.*
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+keystore.properties
+signing.properties
+
+# Generated distribution artifacts and release reports
+*.apk
+*.aab
+/app/release/
+
+# OS and editor temporary files
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp

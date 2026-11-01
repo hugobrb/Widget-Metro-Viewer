@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+    <ImageView
+        android:id="@+id/widget_panel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:importantForAccessibility="yes" />
+    <include layout="@layout/metro_panel_information" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone" />
+    <include android:id="@+id/widget_clock_container"
+        layout="@layout/metro_panel_clock"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:visibility="gone" />
+    <LinearLayout android:id="@+id/widget_refresh_container" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:visibility="gone">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="228" android:gravity="end" android:orientation="horizontal">
+            <ImageButton android:id="@+id/widget_refresh" android:layout_width="48dp" android:layout_height="match_parent" android:padding="12dp" android:background="@android:color/transparent" android:src="@drawable/ic_widget_refresh" android:contentDescription="Actualiser les passages" />
+        </LinearLayout>
+        <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="621" />
+    </LinearLayout>
+    <include android:id="@+id/widget_placeholder"
+        layout="@layout/metro_panel_placeholder"
+        android:layout_width="match_parent" android:layout_height="match_parent" />
+    <!-- Valeurs textuelles conservées pour le contrat existant du provider.
+         Le panneau fournit une description accessible complète. -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:importantForAccessibility="noHideDescendants">
+        <TextView android:id="@+id/widget_station" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/widget_line" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/widget_direction_1" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/widget_time_1" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/widget_direction_2" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/widget_time_2" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="264" height="54" viewBox="0 0 264 54" role="img" aria-label="Télécharger l'APK">
+  <rect x=".5" y=".5" width="263" height="53" rx="13" fill="#101a49" stroke="#303c69"/>
+  <g fill="none" stroke="#ffdc00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M29 15v18m-6-6 6 6 6-6m-16 9v5h20v-5"/>
+  </g>
+  <text x="55" y="33" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700">Télécharger l'APK</text>
+</svg>

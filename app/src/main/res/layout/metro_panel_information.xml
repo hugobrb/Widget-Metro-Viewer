@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/widget_info_container"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:baselineAligned="false">
+    <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="257" android:importantForAccessibility="no" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="467" android:orientation="horizontal" android:baselineAligned="false">
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="990" android:importantForAccessibility="no" />
+        <FrameLayout android:id="@+id/widget_info_host" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="833" android:background="#FAFAFA" />
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="28" android:importantForAccessibility="no" />
+    </LinearLayout>
+    <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="125" android:importantForAccessibility="no" />
+</LinearLayout>

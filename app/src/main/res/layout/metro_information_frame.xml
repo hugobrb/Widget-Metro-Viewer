@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#FAFAFA" android:orientation="vertical" android:baselineAligned="false" android:paddingStart="6dp" android:paddingEnd="6dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="150" android:orientation="horizontal" android:baselineAligned="false">
+        <LinearLayout android:id="@+id/info_group_lines" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="570" android:orientation="vertical" android:gravity="center_vertical" android:baselineAligned="false" />
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="263" android:importantForAccessibility="no" />
+    </LinearLayout>
+    <TextView android:id="@+id/info_group_text" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="282"
+        android:textColor="#000000" android:fontFamily="sans-serif" android:gravity="top|start" android:includeFontPadding="false"
+        android:maxLines="6" android:ellipsize="end" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="8sp" android:autoSizeMaxTextSize="26sp" android:autoSizeStepGranularity="1sp" />
+    <TextView android:id="@+id/info_group_count" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="35"
+        android:textColor="#555555" android:gravity="end|center_vertical" android:includeFontPadding="false" android:maxLines="1"
+        android:autoSizeTextType="uniform" android:autoSizeMinTextSize="5sp" android:autoSizeMaxTextSize="10sp" android:autoSizeStepGranularity="1sp" />
+</LinearLayout>

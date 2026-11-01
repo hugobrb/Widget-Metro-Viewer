@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Coordonnées proportionnelles au panneau 1851 × 849, sans fond opaque. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:baselineAligned="false">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="266"
+        android:importantForAccessibility="no" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="87"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1601"
+            android:importantForAccessibility="no" />
+        <TextClock
+            android:id="@+id/widget_clock"
+            android:background="@drawable/metro_clock_background"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="199"
+            android:format12Hour="HH:mm"
+            android:format24Hour="HH:mm"
+            android:gravity="center"
+            android:textColor="#FFD700"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:includeFontPadding="false"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="1sp"
+            android:autoSizeMaxTextSize="60sp"
+            android:autoSizeStepGranularity="1sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="51"
+            android:importantForAccessibility="no" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="496"
+        android:importantForAccessibility="no" />
+</LinearLayout>

@@ -1,0 +1,3645 @@
+{
+  "source": "https://data.iledefrance.fr/explore/dataset/perimetre-des-donnees-temps-reel-disponibles-sur-la-plateforme-dechanges-stif/",
+  "verifiedAt": "2026-10-31",
+  "stations": [
+    {
+      "name": "Bagneux - Lucie Aubrac",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:483279:",
+        "STIF:StopPoint:Q:483314:",
+        "STIF:StopPoint:Q:483423:"
+      ]
+    },
+    {
+      "name": "Porte d'Orléans",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22140:",
+        "STIF:StopPoint:Q:463092:"
+      ]
+    },
+    {
+      "name": "Raspail",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22131:",
+        "STIF:StopPoint:Q:463291:"
+      ]
+    },
+    {
+      "name": "Vavin",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22135:",
+        "STIF:StopPoint:Q:463016:"
+      ]
+    },
+    {
+      "name": "Cité",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22150:",
+        "STIF:StopPoint:Q:463161:"
+      ]
+    },
+    {
+      "name": "Jaurès",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21952:",
+        "STIF:StopPoint:Q:463095:"
+      ]
+    },
+    {
+      "name": "Hoche",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22017:",
+        "STIF:StopPoint:Q:463017:"
+      ]
+    },
+    {
+      "name": "Gare du Nord",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22007:",
+        "STIF:StopPoint:Q:463182:"
+      ]
+    },
+    {
+      "name": "Jacques Bonsergent",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22011:",
+        "STIF:StopPoint:Q:463191:"
+      ]
+    },
+    {
+      "name": "Quai de la Rapée",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22004:",
+        "STIF:StopPoint:Q:463289:"
+      ]
+    },
+    {
+      "name": "Bel-Air",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22177:",
+        "STIF:StopPoint:Q:463127:"
+      ]
+    },
+    {
+      "name": "Nationale",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22169:",
+        "STIF:StopPoint:Q:463004:"
+      ]
+    },
+    {
+      "name": "Raspail",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22155:",
+        "STIF:StopPoint:Q:463292:"
+      ]
+    },
+    {
+      "name": "Pasteur",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22166:",
+        "STIF:StopPoint:Q:462948:"
+      ]
+    },
+    {
+      "name": "La Motte-Picquet - Grenelle",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22162:",
+        "STIF:StopPoint:Q:463194:"
+      ]
+    },
+    {
+      "name": "Kléber",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22170:",
+        "STIF:StopPoint:Q:463102:"
+      ]
+    },
+    {
+      "name": "Boissière",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22180:",
+        "STIF:StopPoint:Q:463114:"
+      ]
+    },
+    {
+      "name": "Saint-Jacques",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22160:",
+        "STIF:StopPoint:Q:463305:"
+      ]
+    },
+    {
+      "name": "Quai de la Gare",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22161:",
+        "STIF:StopPoint:Q:463288:"
+      ]
+    },
+    {
+      "name": "Dugommier",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22182:",
+        "STIF:StopPoint:Q:463075:"
+      ]
+    },
+    {
+      "name": "Villejuif Paul Vaillant-Couturier",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22401:",
+        "STIF:StopPoint:Q:463324:"
+      ]
+    },
+    {
+      "name": "Poissonnière",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22377:",
+        "STIF:StopPoint:Q:463255:"
+      ]
+    },
+    {
+      "name": "Cadet",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22390:",
+        "STIF:StopPoint:Q:463139:"
+      ]
+    },
+    {
+      "name": "Pyramides",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22375:",
+        "STIF:StopPoint:Q:463283:"
+      ]
+    },
+    {
+      "name": "Place Monge",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22366:",
+        "STIF:StopPoint:Q:463106:"
+      ]
+    },
+    {
+      "name": "Censier - Daubenton",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22391:",
+        "STIF:StopPoint:Q:463157:"
+      ]
+    },
+    {
+      "name": "Porte de Choisy",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22373:",
+        "STIF:StopPoint:Q:463030:"
+      ]
+    },
+    {
+      "name": "Palais Royal - Musée du Louvre",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22376:",
+        "STIF:StopPoint:Q:463249:"
+      ]
+    },
+    {
+      "name": "Corentin Cariou",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22389:",
+        "STIF:StopPoint:Q:463152:"
+      ]
+    },
+    {
+      "name": "Aubervilliers - Pantin - Quatre Chemins",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22394:",
+        "STIF:StopPoint:Q:463031:"
+      ]
+    },
+    {
+      "name": "Tolbiac",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22370:",
+        "STIF:StopPoint:Q:463267:"
+      ]
+    },
+    {
+      "name": "Créteil - L'Échat",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22211:",
+        "STIF:StopPoint:Q:463166:"
+      ]
+    },
+    {
+      "name": "Faidherbe - Chaligny",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22204:",
+        "STIF:StopPoint:Q:463172:"
+      ]
+    },
+    {
+      "name": "Michel Bizot",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22206:",
+        "STIF:StopPoint:Q:463226:"
+      ]
+    },
+    {
+      "name": "Maisons-Alfort - Les Juilliottes",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22216:",
+        "STIF:StopPoint:Q:463015:"
+      ]
+    },
+    {
+      "name": "École Vétérinaire de Maisons-Alfort",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22214:",
+        "STIF:StopPoint:Q:463047:"
+      ]
+    },
+    {
+      "name": "Daumesnil",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22184:",
+        "STIF:StopPoint:Q:463168:"
+      ]
+    },
+    {
+      "name": "Montgallet",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22205:",
+        "STIF:StopPoint:Q:463241:"
+      ]
+    },
+    {
+      "name": "Ledru-Rollin",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22203:",
+        "STIF:StopPoint:Q:463195:"
+      ]
+    },
+    {
+      "name": "Chemin Vert",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22202:",
+        "STIF:StopPoint:Q:463146:"
+      ]
+    },
+    {
+      "name": "Filles du Calvaire",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22200:",
+        "STIF:StopPoint:Q:463048:"
+      ]
+    },
+    {
+      "name": "Madeleine",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22194:",
+        "STIF:StopPoint:Q:463063:"
+      ]
+    },
+    {
+      "name": "Invalides",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22193:",
+        "STIF:StopPoint:Q:463199:"
+      ]
+    },
+    {
+      "name": "École Militaire",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22191:",
+        "STIF:StopPoint:Q:463177:"
+      ]
+    },
+    {
+      "name": "Félix Faure",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22189:",
+        "STIF:StopPoint:Q:463163:"
+      ]
+    },
+    {
+      "name": "Balard",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22186:",
+        "STIF:StopPoint:Q:463051:"
+      ]
+    },
+    {
+      "name": "Maraîchers",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21936:",
+        "STIF:StopPoint:Q:463215:"
+      ]
+    },
+    {
+      "name": "Voltaire",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21916:",
+        "STIF:StopPoint:Q:463325:"
+      ]
+    },
+    {
+      "name": "Oberkampf",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21925:",
+        "STIF:StopPoint:Q:463054:"
+      ]
+    },
+    {
+      "name": "Bonne Nouvelle",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21933:",
+        "STIF:StopPoint:Q:463133:"
+      ]
+    },
+    {
+      "name": "Alma - Marceau",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21935:",
+        "STIF:StopPoint:Q:463052:"
+      ]
+    },
+    {
+      "name": "Rue de la Pompe",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21908:",
+        "STIF:StopPoint:Q:463055:"
+      ]
+    },
+    {
+      "name": "Michel-Ange - Molitor",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21923:",
+        "STIF:StopPoint:Q:463239:"
+      ]
+    },
+    {
+      "name": "Billancourt",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21939:",
+        "STIF:StopPoint:Q:463035:"
+      ]
+    },
+    {
+      "name": "Ranelagh",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21915:",
+        "STIF:StopPoint:Q:463290:"
+      ]
+    },
+    {
+      "name": "La Muette",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21929:",
+        "STIF:StopPoint:Q:463203:"
+      ]
+    },
+    {
+      "name": "Havre-Caumartin",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21926:",
+        "STIF:StopPoint:Q:463188:"
+      ]
+    },
+    {
+      "name": "Chaussée d'Antin - La Fayette",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21932:",
+        "STIF:StopPoint:Q:463144:"
+      ]
+    },
+    {
+      "name": "Grands Boulevards",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21909:",
+        "STIF:StopPoint:Q:463049:"
+      ]
+    },
+    {
+      "name": "Saint-Ambroise",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21910:",
+        "STIF:StopPoint:Q:463299:"
+      ]
+    },
+    {
+      "name": "Porte de Montreuil",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21913:",
+        "STIF:StopPoint:Q:463279:"
+      ]
+    },
+    {
+      "name": "Boulogne Jean Jaurès",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21988:",
+        "STIF:StopPoint:Q:463137:"
+      ]
+    },
+    {
+      "name": "Mirabeau",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21982:"
+      ]
+    },
+    {
+      "name": "La Motte-Picquet - Grenelle",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21969:",
+        "STIF:StopPoint:Q:463202:"
+      ]
+    },
+    {
+      "name": "Maubert - Mutualité",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21975:",
+        "STIF:StopPoint:Q:463237:"
+      ]
+    },
+    {
+      "name": "Cardinal Lemoine",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21984:",
+        "STIF:StopPoint:Q:463141:"
+      ]
+    },
+    {
+      "name": "Jussieu",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21968:",
+        "STIF:StopPoint:Q:463077:"
+      ]
+    },
+    {
+      "name": "Gare d'Austerlitz",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21967:",
+        "STIF:StopPoint:Q:463024:"
+      ]
+    },
+    {
+      "name": "Cluny - La Sorbonne",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21983:",
+        "STIF:StopPoint:Q:462944:"
+      ]
+    },
+    {
+      "name": "Mabillon",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21973:",
+        "STIF:StopPoint:Q:462994:"
+      ]
+    },
+    {
+      "name": "Vaneau",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21977:",
+        "STIF:StopPoint:Q:462959:"
+      ]
+    },
+    {
+      "name": "Charles Michels",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21986:",
+        "STIF:StopPoint:Q:463076:"
+      ]
+    },
+    {
+      "name": "Hôtel de Ville",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21990:",
+        "STIF:StopPoint:Q:463061:"
+      ]
+    },
+    {
+      "name": "Mairie des Lilas",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21999:",
+        "STIF:StopPoint:Q:463223:"
+      ]
+    },
+    {
+      "name": "Coteaux Beauclair",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:490770:",
+        "STIF:StopPoint:Q:490792:"
+      ]
+    },
+    {
+      "name": "Mairie d'Issy",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22062:",
+        "STIF:StopPoint:Q:463219:"
+      ]
+    },
+    {
+      "name": "Volontaires",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22048:",
+        "STIF:StopPoint:Q:462964:"
+      ]
+    },
+    {
+      "name": "Rennes",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22049:",
+        "STIF:StopPoint:Q:462968:"
+      ]
+    },
+    {
+      "name": "Saint-Georges",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22044:",
+        "STIF:StopPoint:Q:463304:"
+      ]
+    },
+    {
+      "name": "Lamarck - Caulaincourt",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22055:",
+        "STIF:StopPoint:Q:463205:"
+      ]
+    },
+    {
+      "name": "Aimé Césaire",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:483900:",
+        "STIF:StopPoint:Q:483903:"
+      ]
+    },
+    {
+      "name": "Marcadet - Poissonniers",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22052:",
+        "STIF:StopPoint:Q:462973:"
+      ]
+    },
+    {
+      "name": "Abbesses",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22059:",
+        "STIF:StopPoint:Q:463116:"
+      ]
+    },
+    {
+      "name": "Trinité - d'Estienne d'Orves",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22046:",
+        "STIF:StopPoint:Q:463317:"
+      ]
+    },
+    {
+      "name": "Madeleine",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21965:",
+        "STIF:StopPoint:Q:463081:"
+      ]
+    },
+    {
+      "name": "Concorde",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22057:",
+        "STIF:StopPoint:Q:463164:"
+      ]
+    },
+    {
+      "name": "Pasteur",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22039:",
+        "STIF:StopPoint:Q:462947:"
+      ]
+    },
+    {
+      "name": "Convention",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22058:",
+        "STIF:StopPoint:Q:462949:"
+      ]
+    },
+    {
+      "name": "Porte de Versailles",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22042:",
+        "STIF:StopPoint:Q:463261:"
+      ]
+    },
+    {
+      "name": "Brochant",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22231:",
+        "STIF:StopPoint:Q:462978:"
+      ]
+    },
+    {
+      "name": "Mairie de Clichy",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22238:",
+        "STIF:StopPoint:Q:463086:"
+      ]
+    },
+    {
+      "name": "Les Agnettes",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22232:",
+        "STIF:StopPoint:Q:463207:"
+      ]
+    },
+    {
+      "name": "Gabriel Péri",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22234:",
+        "STIF:StopPoint:Q:462953:"
+      ]
+    },
+    {
+      "name": "Porte de Clichy",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22219:",
+        "STIF:StopPoint:Q:463278:"
+      ]
+    },
+    {
+      "name": "Saint-Denis - Université",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22242:",
+        "STIF:StopPoint:Q:463302:"
+      ]
+    },
+    {
+      "name": "Basilique de Saint-Denis",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22240:",
+        "STIF:StopPoint:Q:463126:"
+      ]
+    },
+    {
+      "name": "Saint-Denis - Porte de Paris",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22241:",
+        "STIF:StopPoint:Q:463301:"
+      ]
+    },
+    {
+      "name": "Porte de Saint-Ouen",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22220:",
+        "STIF:StopPoint:Q:462951:"
+      ]
+    },
+    {
+      "name": "Liège",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22225:",
+        "STIF:StopPoint:Q:463066:"
+      ]
+    },
+    {
+      "name": "Plaisance",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22223:",
+        "STIF:StopPoint:Q:463085:"
+      ]
+    },
+    {
+      "name": "Châtillon - Montrouge",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22237:",
+        "STIF:StopPoint:Q:463087:"
+      ]
+    },
+    {
+      "name": "Invalides",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22185:",
+        "STIF:StopPoint:Q:463198:"
+      ]
+    },
+    {
+      "name": "Guy Môquet",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22228:",
+        "STIF:StopPoint:Q:462952:"
+      ]
+    },
+    {
+      "name": "Mairie de Saint-Ouen",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22243:",
+        "STIF:StopPoint:Q:463212:"
+      ]
+    },
+    {
+      "name": "Thiais - Orly (Pont de Rungis)",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:490833:",
+        "STIF:StopPoint:Q:490852:"
+      ]
+    },
+    {
+      "name": "Saint-Ouen",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:480288:",
+        "STIF:StopPoint:Q:480341:"
+      ]
+    },
+    {
+      "name": "Porte de Clichy",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:480531:",
+        "STIF:StopPoint:Q:480541:"
+      ]
+    },
+    {
+      "name": "Gare de Lyon",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21958:",
+        "STIF:StopPoint:Q:463046:"
+      ]
+    },
+    {
+      "name": "Maison Blanche",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:490841:",
+        "STIF:StopPoint:Q:490848:"
+      ]
+    },
+    {
+      "name": "Olympiades",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21954:",
+        "STIF:StopPoint:Q:463045:"
+      ]
+    },
+    {
+      "name": "Châtelet",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21959:",
+        "STIF:StopPoint:Q:463159:"
+      ]
+    },
+    {
+      "name": "Madeleine",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21961:",
+        "STIF:StopPoint:Q:463064:"
+      ]
+    },
+    {
+      "name": "Pont Cardinet",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:480286:",
+        "STIF:StopPoint:Q:480340:"
+      ]
+    },
+    {
+      "name": "Saint-Denis - Pleyel",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:490774:",
+        "STIF:StopPoint:Q:490794:"
+      ]
+    },
+    {
+      "name": "Gambetta",
+      "line": "3B",
+      "lineRef": "STIF:Line::C01386:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21945:",
+        "STIF:StopPoint:Q:462997:"
+      ]
+    },
+    {
+      "name": "Louis Blanc",
+      "line": "7B",
+      "lineRef": "STIF:Line::C01387:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:24681:",
+        "STIF:StopPoint:Q:463034:"
+      ]
+    },
+    {
+      "name": "Place des Fêtes",
+      "line": "7B",
+      "lineRef": "STIF:Line::C01387:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:24682:"
+      ]
+    },
+    {
+      "name": "La Défense",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22101:",
+        "STIF:StopPoint:Q:463193:"
+      ]
+    },
+    {
+      "name": "Esplanade de la Défense",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22102:",
+        "STIF:StopPoint:Q:463170:"
+      ]
+    },
+    {
+      "name": "Châtelet",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22087:",
+        "STIF:StopPoint:Q:463160:"
+      ]
+    },
+    {
+      "name": "Bastille",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22089:",
+        "STIF:StopPoint:Q:463019:"
+      ]
+    },
+    {
+      "name": "Bérault",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22105:",
+        "STIF:StopPoint:Q:463130:"
+      ]
+    },
+    {
+      "name": "Reuilly - Diderot",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22076:",
+        "STIF:StopPoint:Q:463294:"
+      ]
+    },
+    {
+      "name": "Gare de Lyon",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22083:",
+        "STIF:StopPoint:Q:463197:"
+      ]
+    },
+    {
+      "name": "Concorde",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22085:",
+        "STIF:StopPoint:Q:463150:"
+      ]
+    },
+    {
+      "name": "Pont de Neuilly",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22099:",
+        "STIF:StopPoint:Q:463044:"
+      ]
+    },
+    {
+      "name": "Nation",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22072:",
+        "STIF:StopPoint:Q:463067:"
+      ]
+    },
+    {
+      "name": "Monceau",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22117:",
+        "STIF:StopPoint:Q:463240:"
+      ]
+    },
+    {
+      "name": "Stalingrad",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22107:",
+        "STIF:StopPoint:Q:463009:"
+      ]
+    },
+    {
+      "name": "Jaurès",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22118:",
+        "STIF:StopPoint:Q:462981:"
+      ]
+    },
+    {
+      "name": "Philippe Auguste",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22113:",
+        "STIF:StopPoint:Q:463230:"
+      ]
+    },
+    {
+      "name": "Anvers",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22123:",
+        "STIF:StopPoint:Q:463120:"
+      ]
+    },
+    {
+      "name": "Pigalle",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22114:",
+        "STIF:StopPoint:Q:463088:"
+      ]
+    },
+    {
+      "name": "Rome",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22110:",
+        "STIF:StopPoint:Q:463296:"
+      ]
+    },
+    {
+      "name": "Charles de Gaulle - Étoile",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22094:",
+        "STIF:StopPoint:Q:463043:"
+      ]
+    },
+    {
+      "name": "République",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21902:",
+        "STIF:StopPoint:Q:462946:"
+      ]
+    },
+    {
+      "name": "Villiers",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22027:",
+        "STIF:StopPoint:Q:462987:"
+      ]
+    },
+    {
+      "name": "Havre-Caumartin",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21906:",
+        "STIF:StopPoint:Q:463189:"
+      ]
+    },
+    {
+      "name": "Arts et Métiers",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21994:",
+        "STIF:StopPoint:Q:463122:"
+      ]
+    },
+    {
+      "name": "Parmentier",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22019:",
+        "STIF:StopPoint:Q:463250:"
+      ]
+    },
+    {
+      "name": "Gallieni",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22037:",
+        "STIF:StopPoint:Q:463174:"
+      ]
+    },
+    {
+      "name": "Simplon",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22133:",
+        "STIF:StopPoint:Q:463310:"
+      ]
+    },
+    {
+      "name": "Château d'Eau",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22153:",
+        "STIF:StopPoint:Q:462979:"
+      ]
+    },
+    {
+      "name": "Saint-Michel",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22137:",
+        "STIF:StopPoint:Q:463306:"
+      ]
+    },
+    {
+      "name": "Saint-Sulpice",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22139:",
+        "STIF:StopPoint:Q:462992:"
+      ]
+    },
+    {
+      "name": "Louvre - Rivoli",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22081:",
+        "STIF:StopPoint:Q:463218:"
+      ]
+    },
+    {
+      "name": "Nation",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22080:",
+        "STIF:StopPoint:Q:462943:"
+      ]
+    },
+    {
+      "name": "Saint-Mandé",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22103:",
+        "STIF:StopPoint:Q:463040:"
+      ]
+    },
+    {
+      "name": "Porte de Vincennes",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22077:",
+        "STIF:StopPoint:Q:463012:"
+      ]
+    },
+    {
+      "name": "George V",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22084:",
+        "STIF:StopPoint:Q:463185:"
+      ]
+    },
+    {
+      "name": "Charles de Gaulle - Étoile",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22086:",
+        "STIF:StopPoint:Q:463013:"
+      ]
+    },
+    {
+      "name": "Ternes",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22108:",
+        "STIF:StopPoint:Q:463266:"
+      ]
+    },
+    {
+      "name": "Villiers",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22106:",
+        "STIF:StopPoint:Q:462988:"
+      ]
+    },
+    {
+      "name": "Colonel Fabien",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22120:",
+        "STIF:StopPoint:Q:462984:"
+      ]
+    },
+    {
+      "name": "Couronnes",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22126:",
+        "STIF:StopPoint:Q:462983:"
+      ]
+    },
+    {
+      "name": "Avron",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22124:",
+        "STIF:StopPoint:Q:463125:"
+      ]
+    },
+    {
+      "name": "Belleville",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22128:",
+        "STIF:StopPoint:Q:463111:"
+      ]
+    },
+    {
+      "name": "Barbès - Rochechouart",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22127:",
+        "STIF:StopPoint:Q:463094:"
+      ]
+    },
+    {
+      "name": "Père Lachaise",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22020:",
+        "STIF:StopPoint:Q:463286:"
+      ]
+    },
+    {
+      "name": "Temple",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22026:",
+        "STIF:StopPoint:Q:463316:"
+      ]
+    },
+    {
+      "name": "Réaumur - Sébastopol",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22018:",
+        "STIF:StopPoint:Q:463091:"
+      ]
+    },
+    {
+      "name": "Bourse",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22033:",
+        "STIF:StopPoint:Q:463090:"
+      ]
+    },
+    {
+      "name": "Opéra",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22030:",
+        "STIF:StopPoint:Q:463246:"
+      ]
+    },
+    {
+      "name": "Wagram",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22028:",
+        "STIF:StopPoint:Q:463070:"
+      ]
+    },
+    {
+      "name": "Louise Michel",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22034:",
+        "STIF:StopPoint:Q:463210:"
+      ]
+    },
+    {
+      "name": "Anatole France",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22036:",
+        "STIF:StopPoint:Q:463119:"
+      ]
+    },
+    {
+      "name": "Pereire",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22021:",
+        "STIF:StopPoint:Q:463228:"
+      ]
+    },
+    {
+      "name": "Marcadet - Poissonniers",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22132:",
+        "STIF:StopPoint:Q:462974:"
+      ]
+    },
+    {
+      "name": "Gare du Nord",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22149:",
+        "STIF:StopPoint:Q:463183:"
+      ]
+    },
+    {
+      "name": "Odéon",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22145:",
+        "STIF:StopPoint:Q:462995:"
+      ]
+    },
+    {
+      "name": "Denfert-Rochereau",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22151:",
+        "STIF:StopPoint:Q:463104:"
+      ]
+    },
+    {
+      "name": "Mouton-Duvernet",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22144:",
+        "STIF:StopPoint:Q:463242:"
+      ]
+    },
+    {
+      "name": "Alésia",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22154:",
+        "STIF:StopPoint:Q:463118:"
+      ]
+    },
+    {
+      "name": "Mairie de Montrouge",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:26602:",
+        "STIF:StopPoint:Q:463222:"
+      ]
+    },
+    {
+      "name": "Saint-Placide",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22138:",
+        "STIF:StopPoint:Q:463308:"
+      ]
+    },
+    {
+      "name": "Châtelet",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22092:",
+        "STIF:StopPoint:Q:463158:"
+      ]
+    },
+    {
+      "name": "Strasbourg - Saint-Denis",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22134:",
+        "STIF:StopPoint:Q:463313:"
+      ]
+    },
+    {
+      "name": "Château Rouge",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22152:",
+        "STIF:StopPoint:Q:463148:"
+      ]
+    },
+    {
+      "name": "Bobigny - Pablo Picasso",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22015:",
+        "STIF:StopPoint:Q:463131:"
+      ]
+    },
+    {
+      "name": "République",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21903:",
+        "STIF:StopPoint:Q:462961:"
+      ]
+    },
+    {
+      "name": "Laumière",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22012:",
+        "STIF:StopPoint:Q:462999:"
+      ]
+    },
+    {
+      "name": "Bobigny-Pantin - Raymond Queneau",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22014:",
+        "STIF:StopPoint:Q:463002:"
+      ]
+    },
+    {
+      "name": "Stalingrad",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22001:",
+        "STIF:StopPoint:Q:463032:"
+      ]
+    },
+    {
+      "name": "Bréguet-Sabin",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22008:",
+        "STIF:StopPoint:Q:463138:"
+      ]
+    },
+    {
+      "name": "Place d'Italie",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22006:",
+        "STIF:StopPoint:Q:463025:"
+      ]
+    },
+    {
+      "name": "Chevaleret",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22174:",
+        "STIF:StopPoint:Q:463147:"
+      ]
+    },
+    {
+      "name": "Glacière",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22173:",
+        "STIF:StopPoint:Q:463186:"
+      ]
+    },
+    {
+      "name": "Edgar Quinet",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22172:",
+        "STIF:StopPoint:Q:463100:"
+      ]
+    },
+    {
+      "name": "Charles de Gaulle - Étoile",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22095:",
+        "STIF:StopPoint:Q:463042:"
+      ]
+    },
+    {
+      "name": "Montparnasse Bienvenue",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22156:",
+        "STIF:StopPoint:Q:462955:"
+      ]
+    },
+    {
+      "name": "Daumesnil",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22181:",
+        "STIF:StopPoint:Q:463169:"
+      ]
+    },
+    {
+      "name": "Pierre et Marie Curie",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22397:",
+        "STIF:StopPoint:Q:463251:"
+      ]
+    },
+    {
+      "name": "Le Kremlin-Bicêtre",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22398:",
+        "STIF:StopPoint:Q:463107:"
+      ]
+    },
+    {
+      "name": "Villejuif Léo Lagrange",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22399:",
+        "STIF:StopPoint:Q:463323:"
+      ]
+    },
+    {
+      "name": "Villejuif - Louis Aragon",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22400:",
+        "STIF:StopPoint:Q:463269:"
+      ]
+    },
+    {
+      "name": "Gare de l'Est",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22387:",
+        "STIF:StopPoint:Q:463001:"
+      ]
+    },
+    {
+      "name": "Le Peletier",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22382:",
+        "STIF:StopPoint:Q:463206:"
+      ]
+    },
+    {
+      "name": "Châtelet",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22364:",
+        "STIF:StopPoint:Q:463060:"
+      ]
+    },
+    {
+      "name": "Sully - Morland",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22369:",
+        "STIF:StopPoint:Q:463265:"
+      ]
+    },
+    {
+      "name": "Maison Blanche",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22385:",
+        "STIF:StopPoint:Q:463224:"
+      ]
+    },
+    {
+      "name": "Porte d'Italie",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22380:",
+        "STIF:StopPoint:Q:463235:"
+      ]
+    },
+    {
+      "name": "Porte d'Ivry",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22372:",
+        "STIF:StopPoint:Q:463029:"
+      ]
+    },
+    {
+      "name": "Mairie d'Ivry",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22396:",
+        "STIF:StopPoint:Q:463220:"
+      ]
+    },
+    {
+      "name": "Les Gobelins",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22383:",
+        "STIF:StopPoint:Q:463216:"
+      ]
+    },
+    {
+      "name": "Créteil - Préfecture",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22213:",
+        "STIF:StopPoint:Q:463056:"
+      ]
+    },
+    {
+      "name": "Boucicaut",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22188:",
+        "STIF:StopPoint:Q:463135:"
+      ]
+    },
+    {
+      "name": "La Motte-Picquet - Grenelle",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22183:",
+        "STIF:StopPoint:Q:463201:"
+      ]
+    },
+    {
+      "name": "Concorde",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22096:",
+        "STIF:StopPoint:Q:463151:"
+      ]
+    },
+    {
+      "name": "Bastille",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22097:",
+        "STIF:StopPoint:Q:463000:"
+      ]
+    },
+    {
+      "name": "Maisons-Alfort - Stade",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22215:",
+        "STIF:StopPoint:Q:463225:"
+      ]
+    },
+    {
+      "name": "Créteil - Université",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22212:",
+        "STIF:StopPoint:Q:463167:"
+      ]
+    },
+    {
+      "name": "Liberté",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22209:",
+        "STIF:StopPoint:Q:463209:"
+      ]
+    },
+    {
+      "name": "Opéra",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22195:",
+        "STIF:StopPoint:Q:463244:"
+      ]
+    },
+    {
+      "name": "Charonne",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21934:",
+        "STIF:StopPoint:Q:463143:"
+      ]
+    },
+    {
+      "name": "Porte de Saint-Cloud",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21914:",
+        "STIF:StopPoint:Q:463259:"
+      ]
+    },
+    {
+      "name": "Pont de Sèvres",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21938:",
+        "STIF:StopPoint:Q:463233:"
+      ]
+    },
+    {
+      "name": "Exelmans",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21930:",
+        "STIF:StopPoint:Q:462956:"
+      ]
+    },
+    {
+      "name": "Michel-Ange - Auteuil",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21922:",
+        "STIF:StopPoint:Q:463238:"
+      ]
+    },
+    {
+      "name": "Jasmin",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21928:",
+        "STIF:StopPoint:Q:463038:"
+      ]
+    },
+    {
+      "name": "Saint-Augustin",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21911:",
+        "STIF:StopPoint:Q:463300:"
+      ]
+    },
+    {
+      "name": "Strasbourg - Saint-Denis",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21920:",
+        "STIF:StopPoint:Q:463264:"
+      ]
+    },
+    {
+      "name": "Nation",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21919:",
+        "STIF:StopPoint:Q:462942:"
+      ]
+    },
+    {
+      "name": "Buzenval",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:25084:",
+        "STIF:StopPoint:Q:463039:"
+      ]
+    },
+    {
+      "name": "Porte d'Auteuil",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21974:"
+      ]
+    },
+    {
+      "name": "Duroc",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21970:",
+        "STIF:StopPoint:Q:463084:"
+      ]
+    },
+    {
+      "name": "Châtelet",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21966:",
+        "STIF:StopPoint:Q:463079:"
+      ]
+    },
+    {
+      "name": "République",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21937:",
+        "STIF:StopPoint:Q:462960:"
+      ]
+    },
+    {
+      "name": "Place des Fêtes",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21951:",
+        "STIF:StopPoint:Q:463254:"
+      ]
+    },
+    {
+      "name": "Serge Gainsbourg",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:490762:",
+        "STIF:StopPoint:Q:490787:"
+      ]
+    },
+    {
+      "name": "Rosny-Bois-Perrier",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:490772:",
+        "STIF:StopPoint:Q:490793:"
+      ]
+    },
+    {
+      "name": "Pyrénées",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21991:",
+        "STIF:StopPoint:Q:463287:"
+      ]
+    },
+    {
+      "name": "Goncourt",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21996:",
+        "STIF:StopPoint:Q:463187:"
+      ]
+    },
+    {
+      "name": "Rambuteau",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21992:",
+        "STIF:StopPoint:Q:462945:"
+      ]
+    },
+    {
+      "name": "Notre-Dame-des-Champs",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22051:",
+        "STIF:StopPoint:Q:462965:"
+      ]
+    },
+    {
+      "name": "Marx Dormoy",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22053:",
+        "STIF:StopPoint:Q:463236:"
+      ]
+    },
+    {
+      "name": "Mairie d'Aubervilliers",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:483898:",
+        "STIF:StopPoint:Q:483904:"
+      ]
+    },
+    {
+      "name": "Sèvres - Babylone",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21980:",
+        "STIF:StopPoint:Q:462966:"
+      ]
+    },
+    {
+      "name": "Montparnasse Bienvenue",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22038:",
+        "STIF:StopPoint:Q:462980:"
+      ]
+    },
+    {
+      "name": "Vaugirard",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22047:",
+        "STIF:StopPoint:Q:463321:"
+      ]
+    },
+    {
+      "name": "Corentin Celton",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22061:",
+        "STIF:StopPoint:Q:463153:"
+      ]
+    },
+    {
+      "name": "Asnières - Gennevilliers - Les Courtilles",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22233:",
+        "STIF:StopPoint:Q:463109:"
+      ]
+    },
+    {
+      "name": "La Fourche",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22227:",
+        "STIF:StopPoint:Q:462975:",
+        "STIF:StopPoint:Q:478395:"
+      ]
+    },
+    {
+      "name": "Miromesnil",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22224:",
+        "STIF:StopPoint:Q:474397:"
+      ]
+    },
+    {
+      "name": "Duroc",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22229:",
+        "STIF:StopPoint:Q:463083:"
+      ]
+    },
+    {
+      "name": "Malakoff - Rue Étienne Dolet",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22236:",
+        "STIF:StopPoint:Q:463214:"
+      ]
+    },
+    {
+      "name": "Champs-Élysées - Clemenceau",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22093:",
+        "STIF:StopPoint:Q:463011:"
+      ]
+    },
+    {
+      "name": "Carrefour Pleyel",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22239:",
+        "STIF:StopPoint:Q:462976:"
+      ]
+    },
+    {
+      "name": "Chevilly-Larue (Marché International)",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:490835:",
+        "STIF:StopPoint:Q:490851:"
+      ]
+    },
+    {
+      "name": "Cour Saint-Emilion",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21956:",
+        "STIF:StopPoint:Q:463165:"
+      ]
+    },
+    {
+      "name": "Hôpital Bicêtre",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:490839:",
+        "STIF:StopPoint:Q:490849:"
+      ]
+    },
+    {
+      "name": "L'Haÿ-les-Roses",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:490837:",
+        "STIF:StopPoint:Q:490850:"
+      ]
+    },
+    {
+      "name": "Saint-Fargeau",
+      "line": "3B",
+      "lineRef": "STIF:Line::C01386:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21946:",
+        "STIF:StopPoint:Q:463071:"
+      ]
+    },
+    {
+      "name": "Porte des Lilas",
+      "line": "3B",
+      "lineRef": "STIF:Line::C01386:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21947:",
+        "STIF:StopPoint:Q:463262:"
+      ]
+    },
+    {
+      "name": "Botzaris",
+      "line": "7B",
+      "lineRef": "STIF:Line::C01387:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:24686:",
+        "STIF:StopPoint:Q:463134:"
+      ]
+    },
+    {
+      "name": "Jaurès",
+      "line": "7B",
+      "lineRef": "STIF:Line::C01387:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:24680:",
+        "STIF:StopPoint:Q:463074:"
+      ]
+    },
+    {
+      "name": "Porte de la Villette",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22374:",
+        "STIF:StopPoint:Q:463007:"
+      ]
+    },
+    {
+      "name": "Crimée",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22392:",
+        "STIF:StopPoint:Q:463155:"
+      ]
+    },
+    {
+      "name": "Riquet",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22371:",
+        "STIF:StopPoint:Q:463295:"
+      ]
+    },
+    {
+      "name": "Chaussée d'Antin - La Fayette",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22388:",
+        "STIF:StopPoint:Q:463145:"
+      ]
+    },
+    {
+      "name": "Pont Neuf",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22379:",
+        "STIF:StopPoint:Q:463232:"
+      ]
+    },
+    {
+      "name": "Opéra",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22381:",
+        "STIF:StopPoint:Q:463245:"
+      ]
+    },
+    {
+      "name": "Château Landon",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22367:",
+        "STIF:StopPoint:Q:463006:"
+      ]
+    },
+    {
+      "name": "Commerce",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22190:",
+        "STIF:StopPoint:Q:463162:"
+      ]
+    },
+    {
+      "name": "Richelieu - Drouot",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22196:",
+        "STIF:StopPoint:Q:463037:"
+      ]
+    },
+    {
+      "name": "Grands Boulevards",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22197:",
+        "STIF:StopPoint:Q:463058:"
+      ]
+    },
+    {
+      "name": "Strasbourg - Saint-Denis",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22159:",
+        "STIF:StopPoint:Q:463312:"
+      ]
+    },
+    {
+      "name": "République",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22199:",
+        "STIF:StopPoint:Q:462962:"
+      ]
+    },
+    {
+      "name": "Saint-Sébastien - Froissart",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22201:",
+        "STIF:StopPoint:Q:463309:"
+      ]
+    },
+    {
+      "name": "Pointe du Lac",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21784:",
+        "STIF:StopPoint:Q:463057:"
+      ]
+    },
+    {
+      "name": "Charenton - Écoles",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22210:",
+        "STIF:StopPoint:Q:463142:"
+      ]
+    },
+    {
+      "name": "Porte de Charenton",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22208:",
+        "STIF:StopPoint:Q:463277:"
+      ]
+    },
+    {
+      "name": "Reuilly - Diderot",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22098:",
+        "STIF:StopPoint:Q:463293:"
+      ]
+    },
+    {
+      "name": "La Tour-Maubourg",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22192:",
+        "STIF:StopPoint:Q:463204:"
+      ]
+    },
+    {
+      "name": "Robespierre",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21942:",
+        "STIF:StopPoint:Q:463053:"
+      ]
+    },
+    {
+      "name": "Rue des Boulets",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22442:",
+        "STIF:StopPoint:Q:463298:"
+      ]
+    },
+    {
+      "name": "Richelieu - Drouot",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21921:",
+        "STIF:StopPoint:Q:463036:"
+      ]
+    },
+    {
+      "name": "Saint-Philippe-du-Roule",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21912:",
+        "STIF:StopPoint:Q:462915:"
+      ]
+    },
+    {
+      "name": "Iéna",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21927:",
+        "STIF:StopPoint:Q:463190:"
+      ]
+    },
+    {
+      "name": "Trocadéro",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21917:",
+        "STIF:StopPoint:Q:463318:"
+      ]
+    },
+    {
+      "name": "Marcel Sembat",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21940:",
+        "STIF:StopPoint:Q:462914:"
+      ]
+    },
+    {
+      "name": "Croix de Chavaux",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21943:",
+        "STIF:StopPoint:Q:463176:"
+      ]
+    },
+    {
+      "name": "Chardon Lagache",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21985:"
+      ]
+    },
+    {
+      "name": "Javel - André Citroën",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21972:",
+        "STIF:StopPoint:Q:462958:"
+      ]
+    },
+    {
+      "name": "Sèvres - Babylone",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21976:",
+        "STIF:StopPoint:Q:462967:"
+      ]
+    },
+    {
+      "name": "Michel-Ange - Auteuil",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21907:"
+      ]
+    },
+    {
+      "name": "Boulogne Pont de Saint-Cloud",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21989:",
+        "STIF:StopPoint:Q:463136:"
+      ]
+    },
+    {
+      "name": "Télégraphe",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21993:",
+        "STIF:StopPoint:Q:463319:"
+      ]
+    },
+    {
+      "name": "Porte des Lilas",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21949:",
+        "STIF:StopPoint:Q:463263:"
+      ]
+    },
+    {
+      "name": "Belleville",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21998:",
+        "STIF:StopPoint:Q:463110:"
+      ]
+    },
+    {
+      "name": "Arts et Métiers",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21997:",
+        "STIF:StopPoint:Q:463108:"
+      ]
+    },
+    {
+      "name": "Notre-Dame-de-Lorette",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22050:",
+        "STIF:StopPoint:Q:463062:"
+      ]
+    },
+    {
+      "name": "Jules Joffrin",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22054:",
+        "STIF:StopPoint:Q:463065:"
+      ]
+    },
+    {
+      "name": "Porte de la Chapelle",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22041:",
+        "STIF:StopPoint:Q:463281:"
+      ]
+    },
+    {
+      "name": "Rue du Bac",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22043:",
+        "STIF:StopPoint:Q:462950:"
+      ]
+    },
+    {
+      "name": "Falguière",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22056:",
+        "STIF:StopPoint:Q:463173:"
+      ]
+    },
+    {
+      "name": "Place de Clichy",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22129:",
+        "STIF:StopPoint:Q:463253:"
+      ]
+    },
+    {
+      "name": "Saint-François-Xavier",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22217:",
+        "STIF:StopPoint:Q:463303:"
+      ]
+    },
+    {
+      "name": "Montparnasse Bienvenue",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22157:",
+        "STIF:StopPoint:Q:462954:"
+      ]
+    },
+    {
+      "name": "Pernety",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22222:",
+        "STIF:StopPoint:Q:463229:"
+      ]
+    },
+    {
+      "name": "Malakoff - Plateau de Vanves",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22235:",
+        "STIF:StopPoint:Q:463213:"
+      ]
+    },
+    {
+      "name": "Porte de Vanves",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22221:",
+        "STIF:StopPoint:Q:463260:"
+      ]
+    },
+    {
+      "name": "Garibaldi",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22244:",
+        "STIF:StopPoint:Q:462977:"
+      ]
+    },
+    {
+      "name": "Saint-Lazare",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21962:",
+        "STIF:StopPoint:Q:462972:"
+      ]
+    },
+    {
+      "name": "Bercy",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21957:",
+        "STIF:StopPoint:Q:463129:"
+      ]
+    },
+    {
+      "name": "Bibliothèque François Mitterrand",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21955:",
+        "STIF:StopPoint:Q:463112:"
+      ]
+    },
+    {
+      "name": "Aéroport d'Orly",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:490908:",
+        "STIF:StopPoint:Q:490917:"
+      ]
+    },
+    {
+      "name": "Villejuif - Gustave Roussy",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:490906:",
+        "STIF:StopPoint:Q:490916:"
+      ]
+    },
+    {
+      "name": "Pelleport",
+      "line": "3B",
+      "lineRef": "STIF:Line::C01386:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21948:",
+        "STIF:StopPoint:Q:462990:"
+      ]
+    },
+    {
+      "name": "Bolivar",
+      "line": "7B",
+      "lineRef": "STIF:Line::C01387:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:24685:",
+        "STIF:StopPoint:Q:463132:"
+      ]
+    },
+    {
+      "name": "Étienne Marcel",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22147:",
+        "STIF:StopPoint:Q:463171:"
+      ]
+    },
+    {
+      "name": "Réaumur - Sébastopol",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22142:",
+        "STIF:StopPoint:Q:463072:"
+      ]
+    },
+    {
+      "name": "Barbès - Rochechouart",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22130:",
+        "STIF:StopPoint:Q:463093:"
+      ]
+    },
+    {
+      "name": "Saint-Marcel",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22000:",
+        "STIF:StopPoint:Q:463097:"
+      ]
+    },
+    {
+      "name": "Oberkampf",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21905:",
+        "STIF:StopPoint:Q:463059:"
+      ]
+    },
+    {
+      "name": "Ourcq",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22005:",
+        "STIF:StopPoint:Q:463027:"
+      ]
+    },
+    {
+      "name": "Église de Pantin",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22016:",
+        "STIF:StopPoint:Q:463178:"
+      ]
+    },
+    {
+      "name": "Bastille",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22010:",
+        "STIF:StopPoint:Q:463018:"
+      ]
+    },
+    {
+      "name": "Gare d'Austerlitz",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21981:",
+        "STIF:StopPoint:Q:463023:"
+      ]
+    },
+    {
+      "name": "Bercy",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22178:",
+        "STIF:StopPoint:Q:463128:"
+      ]
+    },
+    {
+      "name": "Cambronne",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22176:",
+        "STIF:StopPoint:Q:463140:"
+      ]
+    },
+    {
+      "name": "Dupleix",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22171:",
+        "STIF:StopPoint:Q:463099:"
+      ]
+    },
+    {
+      "name": "Bir-Hakeim",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22179:",
+        "STIF:StopPoint:Q:463005:"
+      ]
+    },
+    {
+      "name": "Trocadéro",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22164:",
+        "STIF:StopPoint:Q:463268:"
+      ]
+    },
+    {
+      "name": "Sèvres-Lecourbe",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22163:",
+        "STIF:StopPoint:Q:463314:"
+      ]
+    },
+    {
+      "name": "Nation",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22073:",
+        "STIF:StopPoint:Q:463028:"
+      ]
+    },
+    {
+      "name": "Les Sablons",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22100:",
+        "STIF:StopPoint:Q:463217:"
+      ]
+    },
+    {
+      "name": "Saint-Paul (Le Marais)",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22074:",
+        "STIF:StopPoint:Q:463307:"
+      ]
+    },
+    {
+      "name": "Château de Vincennes",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22104:",
+        "STIF:StopPoint:Q:463149:"
+      ]
+    },
+    {
+      "name": "Argentine",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22088:",
+        "STIF:StopPoint:Q:463121:"
+      ]
+    },
+    {
+      "name": "Victor Hugo",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22109:",
+        "STIF:StopPoint:Q:463322:"
+      ]
+    },
+    {
+      "name": "Blanche",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22125:",
+        "STIF:StopPoint:Q:463113:"
+      ]
+    },
+    {
+      "name": "La Chapelle",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22119:",
+        "STIF:StopPoint:Q:462982:"
+      ]
+    },
+    {
+      "name": "Ménilmontant",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22116:",
+        "STIF:StopPoint:Q:463243:"
+      ]
+    },
+    {
+      "name": "Père Lachaise",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22112:",
+        "STIF:StopPoint:Q:463285:"
+      ]
+    },
+    {
+      "name": "Alexandre Dumas",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22122:",
+        "STIF:StopPoint:Q:463117:"
+      ]
+    },
+    {
+      "name": "Place de Clichy",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22115:",
+        "STIF:StopPoint:Q:463252:"
+      ]
+    },
+    {
+      "name": "Porte Dauphine",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22111:",
+        "STIF:StopPoint:Q:463256:"
+      ]
+    },
+    {
+      "name": "Les Halles",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22146:",
+        "STIF:StopPoint:Q:463208:"
+      ]
+    },
+    {
+      "name": "Montparnasse Bienvenue",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22143:",
+        "STIF:StopPoint:Q:462996:"
+      ]
+    },
+    {
+      "name": "Barbara",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:483277:",
+        "STIF:StopPoint:Q:483313:"
+      ]
+    },
+    {
+      "name": "Porte de Clignancourt",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22141:",
+        "STIF:StopPoint:Q:463073:"
+      ]
+    },
+    {
+      "name": "Richard-Lenoir",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22002:",
+        "STIF:StopPoint:Q:463096:"
+      ]
+    },
+    {
+      "name": "Gare de l'Est",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22013:",
+        "STIF:StopPoint:Q:463021:"
+      ]
+    },
+    {
+      "name": "Denfert-Rochereau",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22158:",
+        "STIF:StopPoint:Q:463103:"
+      ]
+    },
+    {
+      "name": "Passy",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22165:",
+        "STIF:StopPoint:Q:463101:"
+      ]
+    },
+    {
+      "name": "Porte Maillot",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22078:",
+        "STIF:StopPoint:Q:463257:"
+      ]
+    },
+    {
+      "name": "Palais Royal - Musée du Louvre",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22079:",
+        "STIF:StopPoint:Q:463227:"
+      ]
+    },
+    {
+      "name": "Tuileries",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22075:",
+        "STIF:StopPoint:Q:463041:"
+      ]
+    },
+    {
+      "name": "Franklin D. Roosevelt",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22082:",
+        "STIF:StopPoint:Q:463181:"
+      ]
+    },
+    {
+      "name": "Courcelles",
+      "line": "2",
+      "lineRef": "STIF:Line::C01372:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22121:",
+        "STIF:StopPoint:Q:463154:"
+      ]
+    },
+    {
+      "name": "Quatre Septembre",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22024:",
+        "STIF:StopPoint:Q:462989:"
+      ]
+    },
+    {
+      "name": "Saint-Lazare",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21963:",
+        "STIF:StopPoint:Q:462971:"
+      ]
+    },
+    {
+      "name": "Malesherbes",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22031:",
+        "STIF:StopPoint:Q:463068:"
+      ]
+    },
+    {
+      "name": "Porte de Champerret",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22023:",
+        "STIF:StopPoint:Q:463258:"
+      ]
+    },
+    {
+      "name": "Europe",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22032:",
+        "STIF:StopPoint:Q:463069:"
+      ]
+    },
+    {
+      "name": "Rue Saint-Maur",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22025:",
+        "STIF:StopPoint:Q:463297:"
+      ]
+    },
+    {
+      "name": "Porte de Bagnolet",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22022:",
+        "STIF:StopPoint:Q:463276:"
+      ]
+    },
+    {
+      "name": "La Courneuve - 8 Mai 1945",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22395:",
+        "STIF:StopPoint:Q:463200:"
+      ]
+    },
+    {
+      "name": "Stalingrad",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22368:",
+        "STIF:StopPoint:Q:463008:"
+      ]
+    },
+    {
+      "name": "Louis Blanc",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22384:",
+        "STIF:StopPoint:Q:463033:"
+      ]
+    },
+    {
+      "name": "Place d'Italie",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22365:",
+        "STIF:StopPoint:Q:463026:"
+      ]
+    },
+    {
+      "name": "Pont Marie (Cité des Arts)",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22378:",
+        "STIF:StopPoint:Q:463231:"
+      ]
+    },
+    {
+      "name": "Fort d'Aubervilliers",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22393:",
+        "STIF:StopPoint:Q:463179:"
+      ]
+    },
+    {
+      "name": "Porte Dorée",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22207:",
+        "STIF:StopPoint:Q:463050:"
+      ]
+    },
+    {
+      "name": "Miromesnil",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21924:",
+        "STIF:StopPoint:Q:462957:"
+      ]
+    },
+    {
+      "name": "Mairie de Montreuil",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21941:",
+        "STIF:StopPoint:Q:463221:"
+      ]
+    },
+    {
+      "name": "Michel-Ange - Molitor",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21904:"
+      ]
+    },
+    {
+      "name": "Odéon",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21978:",
+        "STIF:StopPoint:Q:462998:"
+      ]
+    },
+    {
+      "name": "Ségur",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21979:",
+        "STIF:StopPoint:Q:463315:"
+      ]
+    },
+    {
+      "name": "Jourdain",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21995:",
+        "STIF:StopPoint:Q:463192:"
+      ]
+    },
+    {
+      "name": "Montreuil - Hôpital",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:490766:",
+        "STIF:StopPoint:Q:490789:"
+      ]
+    },
+    {
+      "name": "Romainville - Carnot",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:490764:",
+        "STIF:StopPoint:Q:490788:"
+      ]
+    },
+    {
+      "name": "Solférino",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22045:",
+        "STIF:StopPoint:Q:463311:"
+      ]
+    },
+    {
+      "name": "Assemblée Nationale",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22060:",
+        "STIF:StopPoint:Q:463123:"
+      ]
+    },
+    {
+      "name": "Front Populaire",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:24679:",
+        "STIF:StopPoint:Q:463082:"
+      ]
+    },
+    {
+      "name": "Pigalle",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22040:",
+        "STIF:StopPoint:Q:463089:"
+      ]
+    },
+    {
+      "name": "Varenne",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22226:",
+        "STIF:StopPoint:Q:463320:"
+      ]
+    },
+    {
+      "name": "Gaîté",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22230:",
+        "STIF:StopPoint:Q:463184:"
+      ]
+    },
+    {
+      "name": "Saint-Lazare",
+      "line": "13",
+      "lineRef": "STIF:Line::C01383:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22218:",
+        "STIF:StopPoint:Q:462970:"
+      ]
+    },
+    {
+      "name": "Pyramides",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21960:",
+        "STIF:StopPoint:Q:463284:"
+      ]
+    },
+    {
+      "name": "Mairie de Saint-Ouen",
+      "line": "14",
+      "lineRef": "STIF:Line::C01384:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:480290:",
+        "STIF:StopPoint:Q:480330:"
+      ]
+    },
+    {
+      "name": "Danube",
+      "line": "7B",
+      "lineRef": "STIF:Line::C01387:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:24687:"
+      ]
+    },
+    {
+      "name": "Jussieu",
+      "line": "7",
+      "lineRef": "STIF:Line::C01377:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22386:",
+        "STIF:StopPoint:Q:463078:"
+      ]
+    },
+    {
+      "name": "Lourmel",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22187:",
+        "STIF:StopPoint:Q:463211:"
+      ]
+    },
+    {
+      "name": "Bonne Nouvelle",
+      "line": "8",
+      "lineRef": "STIF:Line::C01378:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22198:",
+        "STIF:StopPoint:Q:463115:"
+      ]
+    },
+    {
+      "name": "République",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21918:",
+        "STIF:StopPoint:Q:462963:"
+      ]
+    },
+    {
+      "name": "Franklin D. Roosevelt",
+      "line": "9",
+      "lineRef": "STIF:Line::C01379:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21931:",
+        "STIF:StopPoint:Q:463180:"
+      ]
+    },
+    {
+      "name": "Avenue Émile Zola",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21987:",
+        "STIF:StopPoint:Q:463124:"
+      ]
+    },
+    {
+      "name": "Église d'Auteuil",
+      "line": "10",
+      "lineRef": "STIF:Line::C01380:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21971:"
+      ]
+    },
+    {
+      "name": "La Dhuys",
+      "line": "11",
+      "lineRef": "STIF:Line::C01381:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:490768:",
+        "STIF:StopPoint:Q:490791:"
+      ]
+    },
+    {
+      "name": "Saint-Lazare",
+      "line": "12",
+      "lineRef": "STIF:Line::C01382:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21964:",
+        "STIF:StopPoint:Q:462969:"
+      ]
+    },
+    {
+      "name": "Buttes Chaumont",
+      "line": "7B",
+      "lineRef": "STIF:Line::C01387:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:24683:",
+        "STIF:StopPoint:Q:463156:"
+      ]
+    },
+    {
+      "name": "Pré-Saint-Gervais",
+      "line": "7B",
+      "lineRef": "STIF:Line::C01387:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:24684:",
+        "STIF:StopPoint:Q:463282:"
+      ]
+    },
+    {
+      "name": "Saint-Germain-des-Prés",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22136:",
+        "STIF:StopPoint:Q:462993:"
+      ]
+    },
+    {
+      "name": "Gare de l'Est",
+      "line": "4",
+      "lineRef": "STIF:Line::C01374:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22148:",
+        "STIF:StopPoint:Q:463022:"
+      ]
+    },
+    {
+      "name": "Campo-Formio",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22009:",
+        "STIF:StopPoint:Q:463020:"
+      ]
+    },
+    {
+      "name": "Porte de Pantin",
+      "line": "5",
+      "lineRef": "STIF:Line::C01375:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22003:",
+        "STIF:StopPoint:Q:463280:"
+      ]
+    },
+    {
+      "name": "Picpus",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22167:",
+        "STIF:StopPoint:Q:463098:"
+      ]
+    },
+    {
+      "name": "Place d'Italie",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22168:",
+        "STIF:StopPoint:Q:463003:"
+      ]
+    },
+    {
+      "name": "Corvisart",
+      "line": "6",
+      "lineRef": "STIF:Line::C01376:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22175:",
+        "STIF:StopPoint:Q:463105:"
+      ]
+    },
+    {
+      "name": "Champs-Élysées - Clemenceau",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22090:",
+        "STIF:StopPoint:Q:463010:"
+      ]
+    },
+    {
+      "name": "Hôtel de Ville",
+      "line": "1",
+      "lineRef": "STIF:Line::C01371:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22091:",
+        "STIF:StopPoint:Q:463080:"
+      ]
+    },
+    {
+      "name": "Pont de Levallois - Bécon",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22035:",
+        "STIF:StopPoint:Q:462985:"
+      ]
+    },
+    {
+      "name": "Gambetta",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:21950:",
+        "STIF:StopPoint:Q:462991:"
+      ]
+    },
+    {
+      "name": "Sentier",
+      "line": "3",
+      "lineRef": "STIF:Line::C01373:",
+      "monitoringRefs": [
+        "STIF:StopPoint:Q:22029:",
+        "STIF:StopPoint:Q:462986:"
+      ]
+    }
+  ]
+}
