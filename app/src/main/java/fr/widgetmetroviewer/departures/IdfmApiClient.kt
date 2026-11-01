@@ -71,7 +71,7 @@ internal class IdfmApiClient(
                                 validate: (String) -> IdfmTestResult, onAttempt: () -> Unit): IdfmResponse =
         kotlinx.coroutines.coroutineScope<IdfmResponse> {
             if (!requestAllowed()) return@coroutineScope IdfmResponse.Failure(
-                IdfmTestResult(IdfmTestStatus.PAUSED, "Actualisation suspendue : téléphone verrouillé."))
+                IdfmTestResult(IdfmTestStatus.PAUSED, "Actualisation en pause : panneau non visible ou téléphone verrouillé."))
             val owner = kotlin.coroutines.coroutineContext[kotlinx.coroutines.Job]!!
             val monitor = launch {
                 while (isActive) {
@@ -117,7 +117,7 @@ internal class IdfmApiClient(
                                 }
                             } finally { connection.disconnect() }
                         } catch (_: PhoneLocked) {
-                            IdfmResponse.Failure(IdfmTestResult(IdfmTestStatus.PAUSED, "Actualisation suspendue : téléphone verrouillé."))
+                            IdfmResponse.Failure(IdfmTestResult(IdfmTestStatus.PAUSED, "Actualisation en pause : panneau non visible ou téléphone verrouillé."))
                         } catch (_: IdfmLocalQuotaException) {
                             IdfmResponse.Failure(IdfmTestResult(IdfmTestStatus.QUOTA, "Le plafond local de requêtes est atteint.", 0))
                         } catch (_: SocketTimeoutException) {

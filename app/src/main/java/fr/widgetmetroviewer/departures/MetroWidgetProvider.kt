@@ -13,6 +13,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import java.time.Duration
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withTimeout
@@ -27,6 +30,7 @@ class MetroWidgetProvider : AppWidgetProvider() {
         refreshFromBroadcast(context)
     }
     override fun onDisabled(context: Context) {
+        MetroRefreshVisibility.stateChanged(context)
         val pending = goAsync()
         scope.launch {
             try { withTimeout(8000) { MetroRefreshScheduler.cancel(context.applicationContext) } }
@@ -38,6 +42,7 @@ class MetroWidgetProvider : AppWidgetProvider() {
         if (intent.action in listOf(Intent.ACTION_TIME_CHANGED, Intent.ACTION_TIMEZONE_CHANGED, Intent.ACTION_DATE_CHANGED)) refreshFromBroadcast(context)
     }
     private fun refreshFromBroadcast(context: Context, request: Boolean = false) {
+        MetroRefreshVisibility.stateChanged(context)
         val pending = goAsync()
         scope.launch {
             try { withTimeout(8000) {
@@ -53,6 +58,7 @@ class MetroWidgetProvider : AppWidgetProvider() {
         private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
         private val renderMutex = Mutex()
         private val revision = AtomicLong()
+        private var localRefresh: Job? = null
 
         fun refreshAll(context: Context, loadingOverride: Boolean? = null) {
             val ticket = revision.incrementAndGet()
@@ -70,7 +76,7 @@ class MetroWidgetProvider : AppWidgetProvider() {
             if (ticket != revision.get()) return@withLock
             val manager = AppWidgetManager.getInstance(context)
             val ids = manager.getAppWidgetIds(ComponentName(context, MetroWidgetProvider::class.java))
-            if (ids.isEmpty()) return@withLock
+            if (ids.isEmpty()) { localRefresh?.cancel(); return@withLock }
             val prefs = context.getSharedPreferences("metro11_preferences", Context.MODE_PRIVATE)
             val station = prefs.getString("station", null)
             val line = prefs.getString("line", null)
@@ -79,6 +85,7 @@ class MetroWidgetProvider : AppWidgetProvider() {
                 PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
             views.setOnClickPendingIntent(R.id.widget_placeholder, open)
             views.setOnClickPendingIntent(R.id.widget_panel, open)
+            var nextLocalChange: Instant? = null
             if (station.isNullOrBlank() || line.isNullOrBlank()) {
                 views.setViewVisibility(R.id.widget_info_container, View.GONE)
                 views.setViewVisibility(R.id.widget_refresh_container, View.GONE)
@@ -88,6 +95,7 @@ class MetroWidgetProvider : AppWidgetProvider() {
             } else {
                 // Lecture locale uniquement : aucun appel HTTPS dans le receiver.
                 val result = MetroDeparturesRepository.get(context).peek(station, line)
+                if (result.origin != DeparturesOrigin.CACHE_STALE) nextLocalChange = result.snapshot?.nextVisualChange(Instant.now())
                 val nominal = MetroDirections.get(context).forStation(station, line)
                 val panel = MetroPanelPresentation.build(station, line, nominal, result, Instant.now(), loadingOverride ?: MetroRefreshScheduler.isRefreshing(context))
                 views.setTextViewText(R.id.widget_station, station)
@@ -103,7 +111,7 @@ class MetroWidgetProvider : AppWidgetProvider() {
                 val refresh = PendingIntent.getBroadcast(context, 1,
                     Intent(context, MetroRefreshReceiver::class.java).setAction(MetroRefreshReceiver.ACTION),
                     PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
-                views.setOnClickPendingIntent(R.id.widget_refresh, refresh)
+                views.setOnClickPendingIntent(R.id.widget_refresh, if (MetroRefreshVisibility.hasUsageAccess(context)) refresh else open)
                 // Les travaux en attente ne doivent jamais bloquer les clics suivants.
                 views.setBoolean(R.id.widget_refresh, "setEnabled", true)
                 views.setViewVisibility(R.id.widget_refresh_container, View.VISIBLE)
@@ -111,7 +119,16 @@ class MetroWidgetProvider : AppWidgetProvider() {
                 views.setViewVisibility(R.id.widget_clock_container, View.VISIBLE)
                 views.setViewVisibility(R.id.widget_placeholder, View.GONE)
             }
-            if (ticket == revision.get()) manager.updateAppWidget(ids, views)
+            if (ticket == revision.get()) {
+                manager.updateAppWidget(ids, views)
+                localRefresh?.cancel()
+                val boundary = nextLocalChange
+                if (boundary != null && MetroPhoneState.canRefresh(context)) localRefresh = scope.launch {
+                    delay(Duration.between(Instant.now(), boundary).toMillis().coerceAtLeast(1))
+                    // Transition visuelle locale, sans appel PRIM. Android peut suspendre le processus.
+                    if (MetroPhoneState.canRefresh(context)) refreshAll(context)
+                }
+            }
         }
     }
 }

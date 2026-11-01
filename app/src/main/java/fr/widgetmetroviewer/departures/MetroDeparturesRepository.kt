@@ -83,7 +83,7 @@ internal class MetroDeparturesRepository internal constructor(
                     }
                     val now = clock.instant()
                     val age = previous?.let { Duration.between(it.fetchedAt, now) }
-                    val notExpired = previous?.let { it.departures.isEmpty() || it.departures.any { item -> item.isUpcoming(now) } } == true
+                    val notExpired = previous?.let { it.departures.none { item -> !item.withdrawn } || it.departures.any { item -> item.isUpcoming(now) } } == true
                     if (lastFailure == null && previous != null && age != null && !age.isNegative && notExpired &&
                         ((!forceRefresh && age <= freshFor) || previous.fetchedAt >= startedAt ||
                             (forceRefresh && age < Duration.ofSeconds(30)))) {
@@ -119,6 +119,7 @@ internal class MetroDeparturesRepository internal constructor(
                     val parsed = mutableListOf<MetroDeparture>()
                     var malformed = 0
                     val cancelledJourneys = mutableSetOf<String>()
+                    val withdrawals = mutableListOf<MetroDeparture>()
                     var failure: IdfmTestResult? = null
                     val completed = withTimeoutOrNull(50000) {
                         for (ref in target.monitoringRefs) {
@@ -129,6 +130,7 @@ internal class MetroDeparturesRepository internal constructor(
                                     parsed.addAll(batch.departures)
                                     malformed += batch.malformedRecords
                                     cancelledJourneys.addAll(batch.cancelledJourneyIds)
+                                    withdrawals.addAll(batch.withdrawals)
                                 }
                             }
                         }
@@ -143,7 +145,7 @@ internal class MetroDeparturesRepository internal constructor(
                         val retryAt = usage.read().nextAllowedAt.takeIf { it > clock.millis() }?.let { Instant.ofEpochMilli(it) }
                         return@result unavailable(previous, error.message, error.status == IdfmTestStatus.QUOTA, retryAt)
                     }
-                    saveBatch(target, ParsedDepartures(parsed, malformed, cancelledJourneys), revision,
+                    saveBatch(target, ParsedDepartures(parsed, malformed, cancelledJourneys, withdrawals), revision,
                         clock.instant(), if (preferLine) "Passages reçus · repli sur l’API unitaire." else null)
                 } catch (error: CancellationException) { throw error }
                 catch (_: Exception) {
@@ -206,10 +208,12 @@ internal class MetroDeparturesRepository internal constructor(
 
     private fun saveBatch(target: IdfmStationReference, batch: ParsedDepartures, revision: Long,
                           fetchedAt: Instant, message: String?, origin: DeparturesOrigin = DeparturesOrigin.NETWORK): DeparturesResult {
-        val departures = MetroDirections.get(appContext).classify(batch.departures.filter { it.journeyId !in batch.cancelledJourneyIds }, target.name,
+        val previous = cache.read(target.name, target.lineRef)?.takeIf { it.queriedMonitoringRefs.toSet() == target.monitoringRefs.toSet() }
+        val classified = MetroDirections.get(appContext).classify(batch.departures, target.name,
             lines.single { MetroLineReferences.forLine(it.name) == target.lineRef })
-            .groupBy { it.direction }.values.flatMap { it.sortedBy { item -> item.at }.take(100) }.sortedBy { it.at }
-        val snapshot = DeparturesSnapshot(target.name, target.lineRef, fetchedAt, departures, batch.malformedRecords, target.monitoringRefs)
+        val departures = MetroDepartureTracker.merge(previous, classified, batch.withdrawals, fetchedAt, clock.instant())
+        val snapshot = DeparturesSnapshot(target.name, target.lineRef, maxOf(fetchedAt, previous?.fetchedAt ?: fetchedAt),
+            departures, batch.malformedRecords, target.monitoringRefs)
         if (revision != connectionRevision.get()) return DeparturesResult(DeparturesState.UNAVAILABLE,
             message = "La configuration de connexion a changé. Recharge les passages.")
         val saved = runCatching { cache.write(snapshot) }.isSuccess

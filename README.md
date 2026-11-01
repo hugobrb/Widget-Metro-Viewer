@@ -37,7 +37,9 @@
 - **Trois thèmes** : clair, sombre ou automatique selon le téléphone.
 - **Des paramètres dédiés** pour le thème et le suivi local des consommations API.
 
-L'actualisation est demandée toutes les minutes lorsque le téléphone est déverrouillé. Android peut différer les travaux en arrière-plan. Le bouton manuel permet de relancer une récupération, avec une protection de 30 secondes contre les clics répétés.
+L'actualisation est demandée toutes les minutes lorsque l’app est visible ou que l’accueil est détecté au premier plan, téléphone déverrouillé. Pour le widget, activez la détection dans **Paramètres → Actualisation intelligente**, puis autorisez l’accès aux données d’utilisation dans Android. Sur les autres applications, les appels sont suspendus. Sans cette autorisation, le bouton du widget ouvre l’app pour actualiser. Le bouton manuel conserve une protection de 30 secondes contre les clics répétés.
+
+La détection reste locale, sans enregistrer ni envoyer d’historique d’utilisation. Elle concerne toutes les pages de l’accueil. Un contrôle léger s’effectue environ toutes les 2 secondes sur l’accueil et 8 secondes sur les autres apps, uniquement avec un widget, l’autorisation et le téléphone déverrouillé. Android peut suspendre le processus et retarder la reprise ; un travail de secours demeure programmé toutes les 15 minutes, sans appel API si les conditions ne sont pas réunies.
 
 ## Installer
 

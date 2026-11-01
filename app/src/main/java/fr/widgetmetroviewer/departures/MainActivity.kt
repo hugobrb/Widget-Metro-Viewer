@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.core.view.WindowCompat
@@ -351,9 +352,11 @@ private fun MetroPreview(station: MetroStation, line: String, revision: Int) {
     var forceNext by remember { mutableStateOf(false) }
     var resumeRevision by remember { mutableIntStateOf(0) }
     val lifecycleOwner = androidx.lifecycle.compose.LocalLifecycleOwner.current
+    var previewVisible by remember(lifecycleOwner) { mutableStateOf(lifecycleOwner.lifecycle.currentState.isAtLeast(androidx.lifecycle.Lifecycle.State.STARTED)) }
     DisposableEffect(lifecycleOwner) {
         var initialResume = true
         val observer = androidx.lifecycle.LifecycleEventObserver { _, event ->
+            previewVisible = lifecycleOwner.lifecycle.currentState.isAtLeast(androidx.lifecycle.Lifecycle.State.STARTED)
             if (event == androidx.lifecycle.Lifecycle.Event.ON_RESUME) {
                 if (initialResume) initialResume = false else resumeRevision++
             }
@@ -361,28 +364,31 @@ private fun MetroPreview(station: MetroStation, line: String, revision: Int) {
         lifecycleOwner.lifecycle.addObserver(observer)
         onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
     }
-    LaunchedEffect(station.name, line) {
-        val repository = MetroDeparturesRepository.get(context)
-        repository.changes.collect { result = repository.peek(station.name, line); now = Instant.now() }
+    LaunchedEffect(station.name, line, lifecycleOwner) {
+        lifecycleOwner.lifecycle.repeatOnLifecycle(androidx.lifecycle.Lifecycle.State.STARTED) {
+            val repository = MetroDeparturesRepository.get(context)
+            repository.changes.collect { result = repository.peek(station.name, line); now = Instant.now() }
+        }
     }
-    // Défilement et ancienneté locaux : aucune requête réseau pour changer d'information.
+    // Aucun tick de l'aperçu quand l'activité n'est plus visible.
     LaunchedEffect(lifecycleOwner) {
-        while (isActive) {
-            delay(MetroInformationRotation.INTERVAL_MILLIS)
-            if (lifecycleOwner.lifecycle.currentState.isAtLeast(androidx.lifecycle.Lifecycle.State.STARTED) &&
-                MetroPhoneState.canRefresh(context)) now = Instant.now()
+        lifecycleOwner.lifecycle.repeatOnLifecycle(androidx.lifecycle.Lifecycle.State.STARTED) {
+            while (isActive) {
+                delay(1000)
+                if (MetroPhoneState.canRefresh(context)) now = Instant.now()
+            }
         }
     }
-    // L'horloge est native ; ce tick recompose seulement les états/horaires locaux, sans appel réseau.
-    LaunchedEffect(Unit) {
-        while (isActive) {
-            delay(MetroRefreshPolicy.INTERVAL_MILLIS)
-            now = Instant.now()
-            if (MetroPhoneState.canRefresh(context) &&
-                lifecycleOwner.lifecycle.currentState.isAtLeast(androidx.lifecycle.Lifecycle.State.STARTED)) resumeRevision++
+    LaunchedEffect(lifecycleOwner) {
+        lifecycleOwner.lifecycle.repeatOnLifecycle(androidx.lifecycle.Lifecycle.State.STARTED) {
+            while (isActive) {
+                delay(MetroRefreshPolicy.INTERVAL_MILLIS)
+                if (MetroPhoneState.canRefresh(context)) resumeRevision++
+            }
         }
     }
-    LaunchedEffect(station.name, line, revision, manualRefresh, resumeRevision) {
+    LaunchedEffect(station.name, line, revision, manualRefresh, resumeRevision, previewVisible) {
+        if (!previewVisible) return@LaunchedEffect
         val repository = MetroDeparturesRepository.get(context)
         try {
             result = repository.peek(station.name, line)

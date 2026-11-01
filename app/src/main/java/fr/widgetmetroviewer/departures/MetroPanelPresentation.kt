@@ -27,7 +27,7 @@ internal data class MetroPanelData(
     val informationNotices: List<MetroTrafficNotice> = emptyList()
 )
 
-/** Projection pure, identique pour l'aperçu et RemoteViews. Aucun faux horaire hors DEMO. */
+/** Présentation commune des horaires pour l’aperçu et le widget. */
 internal object MetroPanelPresentation {
     fun build(station: String, line: String, nominal: Pair<MetroDirection, MetroDirection>,
               result: DeparturesResult?, now: Instant, loading: Boolean = false,
@@ -68,8 +68,9 @@ internal object MetroPanelPresentation {
             val atStop = first.vehicleAtStop && !stale && first.recordedAt?.let {
                 Duration.between(it, now).seconds in 0..60
             } == true
-            return MetroPanelColumn(listOf(first.destinationName), if (atStop) "À QUAI" else first.waitingMinutes(now)?.toString()?.padStart(2, '0'),
-                unit = if (atStop) "" else "min",
+            val estimatedAtStop = !atStop && !stale && first.estimatedAtStop(now)
+            return MetroPanelColumn(listOf(first.destinationName), if (atStop || estimatedAtStop) "À QUAI" else first.waitingMinutes(now)?.toString()?.padStart(2, '0'),
+                unit = if (atStop || estimatedAtStop) "" else "min",
                 detail = when {
                     stale && !first.timeBasis.estimated -> "HORAIRE NON ACTUALISÉ · THÉORIQUE"
                     stale -> "HORAIRE NON ACTUALISÉ"

@@ -22,7 +22,7 @@ internal class MetroDeparturesCache(context: Context, folderName: String = "idfm
             val data = file(station, lineRef).readFully()
             require(data.size <= 1048576)
             val json = JSONObject(String(data, Charsets.UTF_8))
-            require(json.getInt("version") == 1 && json.getString("lineRef") == lineRef)
+            require(json.getInt("version") == 2 && json.getString("lineRef") == lineRef)
             require(MetroCatalog.normalize(json.getString("station")) == MetroCatalog.normalize(station))
             val rows = json.getJSONArray("departures")
             val refs = json.getJSONArray("monitoringRefs")
@@ -39,14 +39,15 @@ internal class MetroDeparturesCache(context: Context, folderName: String = "idfm
                             "TOWARDS_ROSNY" -> DepartureDirection.FORWARD
                             "TOWARDS_CHATELET" -> DepartureDirection.BACKWARD
                             else -> DepartureDirection.valueOf(direction)
-                        })
+                        }, row.optString("lastObservedAt").takeIf { it.isNotBlank() }?.let { Instant.parse(it) },
+                        row.optBoolean("withdrawn", false))
                 }, json.optInt("malformedRecords", 0), (0 until refs.length()).map { refs.getString(it) })
         }.getOrNull()
     }
 
     fun write(snapshot: DeparturesSnapshot): Unit = synchronized(lock) {
         check(folder.isDirectory || folder.mkdirs())
-        val json = JSONObject().put("version", 1).put("station", snapshot.station).put("lineRef", snapshot.lineRef)
+        val json = JSONObject().put("version", 2).put("station", snapshot.station).put("lineRef", snapshot.lineRef)
             .put("fetchedAt", snapshot.fetchedAt.toString()).put("malformedRecords", snapshot.ignoredMalformedRecords)
             .put("monitoringRefs", JSONArray(snapshot.queriedMonitoringRefs))
         val rows = JSONArray()
@@ -55,7 +56,8 @@ internal class MetroDeparturesCache(context: Context, folderName: String = "idfm
                 .put("destinationName", item.destinationName).put("destinationRef", item.destinationRef.orEmpty())
                 .put("directionRef", item.directionRef.orEmpty()).put("at", item.at.toString())
                 .put("timeBasis", item.timeBasis.name).put("recordedAt", item.recordedAt?.toString().orEmpty())
-                .put("vehicleAtStop", item.vehicleAtStop).put("direction", item.direction.name))
+                .put("vehicleAtStop", item.vehicleAtStop).put("direction", item.direction.name)
+                .put("lastObservedAt", item.lastObservedAt?.toString().orEmpty()).put("withdrawn", item.withdrawn))
         }
         json.put("departures", rows)
         val output = file(snapshot.station, snapshot.lineRef)

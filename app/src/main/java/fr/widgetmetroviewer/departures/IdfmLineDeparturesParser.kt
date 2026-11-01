@@ -30,7 +30,7 @@ internal object IdfmLineDeparturesParser {
                 IdfmDeparturesParser.parse(safe, lineRef, ref, now)
             }
             return ParsedDepartures(IdfmDeparturesParser.deduplicate(rows.flatMap { it.departures }),
-                rows.sumOf { it.malformedRecords }, rows.flatMap { it.cancelledJourneyIds }.toSet())
+                rows.sumOf { it.malformedRecords }, rows.flatMap { it.cancelledJourneyIds }.toSet(), rows.flatMap { it.withdrawals })
         }
         val visits = JSONArray()
         var malformed = 0
@@ -44,22 +44,11 @@ internal object IdfmLineDeparturesParser {
                         val ref = IdfmSiri.text(call.opt("StopPointRef"))
                         if (ref == null) { malformed++; continue }
                         if (ref !in monitoringRefs) continue
-                        if (IdfmSiri.text(call.opt("DepartureStatus")) in listOf("departed", "missed", "notExpected")) continue
                         val normalized = JSONObject(journey.toString())
                         normalized.remove("EstimatedCalls")
                         normalized.remove("RecordedCalls")
                         normalized.put("MonitoredCall", call)
-                        // Les compteurs de courses RATP en ET ne constituent pas un identifiant de train fiable.
-                        // On conserve chaque passage distinct (quai + horaire), sans fusionner tous les trains.
-                        val framed = normalized.optJSONObject("FramedVehicleJourneyRef")
-                        val dated = IdfmSiri.text(framed?.opt("DatedVehicleJourneyRef"))
-                            ?: IdfmSiri.text(normalized.opt("DatedVehicleJourneyRef"))
-                        val at = listOf("ExpectedDepartureTime", "ExpectedArrivalTime", "AimedDepartureTime", "AimedArrivalTime")
-                            .firstNotNullOfOrNull { IdfmSiri.text(call.opt(it)) }
-                        normalized.remove("DatedVehicleJourneyRef")
-                        normalized.remove("FramedVehicleJourneyRef")
-                        if (dated != null && at != null) normalized.put("FramedVehicleJourneyRef", JSONObject()
-                            .put("DatedVehicleJourneyRef", dated + "|" + ref + "|" + at))
+                        // Conserver l'identifiant de course : une revision d'horaire reste le meme passage.
                         val recorded = IdfmSiri.text(journey.opt("RecordedAtTime")) ?: IdfmSiri.text(frame.opt("RecordedAtTime"))
                         visits.put(JSONObject().put("MonitoringRef", JSONObject().put("value", ref))
                             .put("RecordedAtTime", recorded.orEmpty()).put("MonitoredVehicleJourney", normalized))
@@ -71,6 +60,6 @@ internal object IdfmLineDeparturesParser {
             .put("StopMonitoringDelivery", JSONArray().put(JSONObject().put("Status", true).put("MonitoredStopVisit", visits)))))
         val rows = monitoringRefs.map { IdfmDeparturesParser.parse(normalized, lineRef, it, now) }
         return ParsedDepartures(IdfmDeparturesParser.deduplicate(rows.flatMap { it.departures }),
-            malformed + rows.sumOf { it.malformedRecords }, rows.flatMap { it.cancelledJourneyIds }.toSet())
+            malformed + rows.sumOf { it.malformedRecords }, rows.flatMap { it.cancelledJourneyIds }.toSet(), rows.flatMap { it.withdrawals })
     }
 }

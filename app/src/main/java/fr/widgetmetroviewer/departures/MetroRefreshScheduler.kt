@@ -18,7 +18,10 @@ internal object MetroRefreshScheduler {
     private val scheduling = Mutex()
     private val constraints = Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()
 
-    fun configurationChanged(context: Context) = launchSynchronization(context, replace = true)
+    fun configurationChanged(context: Context) {
+        MetroRefreshVisibility.stateChanged(context)
+        launchSynchronization(context, replace = true)
+    }
     fun screenStateChanged(context: Context) = launchSynchronization(context)
 
     private fun launchSynchronization(context: Context, replace: Boolean = false) {
