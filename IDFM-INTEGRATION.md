@@ -24,14 +24,12 @@ Le classement des destinations est centralisé dans `MetroDirections`, avec les 
 ## Cache et actualisation
 
 - Cache des passages isolé par ligne et station, dans le stockage privé non sauvegardé.
-- Réponse par ligne réutilisable pendant une minute. Le bouton manuel autorise une nouvelle récupération après 30 secondes ; les clics rapprochés ne multiplient pas les appels.
+- Réponse par ligne réutilisable pendant 30 secondes pour partager un appel entre le widget et l’aperçu.
 - Messages et circulation mis en cache pendant deux minutes. Une réponse réseau incomplète ne remplace pas un cache complet.
 - Conservation des dernières données en cas d'échec, avec un affichage explicitement ancien. Aucune donnée fictive n'est injectée après un échec réseau.
 - Respect des plafonds locaux et des délais de nouvelle tentative, notamment après un refus ou un quota dépassé.
 
-Le widget demande une actualisation toutes les minutes via une chaîne WorkManager, avec un filet de reprise périodique de quinze minutes. Le système Android peut différer son exécution. Aucun appel n'est effectué lorsque le téléphone est verrouillé ; le verrouillage interrompt aussi les requêtes en cours. Le réveil/déverrouillage réévalue la visibilité avant de synchroniser.
-
-Les appels sont également bloqués sur les autres applications. `MetroRefreshVisibility` consulte localement les événements Android après autorisation « Accès aux données d’utilisation » et identifie le lanceur HOME par défaut. Aucun historique n’est persisté ni transmis. Le contrôle est espacé de 2 secondes en visibilité autorisée et de 8 secondes sinon ; il s’arrête lorsque le téléphone est verrouillé, sans widget ou sans autorisation. La détection concerne le lanceur entier, pas la page contenant le widget. Sans autorisation, seule l’app visible peut appeler les API et le bouton du widget ouvre l’app. Les mises à jour locales de l’aperçu suivent son cycle de vie ; les redessins locaux du widget suivent la même condition de visibilité que les appels. Le travail périodique de secours reste présent pour les reprises après arrêt du processus ; il vérifie les conditions avant tout appel.
+Le widget demande une actualisation toutes les 30 secondes via une chaîne WorkManager soumise à une contrainte réseau. Les appels API vérifient aussi que la connexion Internet est validée. L’app peut être en arrière-plan et l’écran peut être verrouillé. Android peut différer l’exécution, notamment en veille, et un travail périodique de secours est programmé toutes les quinze minutes.
 
 Le bouton du widget reste accessible pendant une attente réseau. Un clic remplace une demande immédiate en attente sans interrompre une demande déjà en cours. À partir d'Android 12, la demande manuelle bénéficie du mode expedited, avec repli standard si le quota système est épuisé. Les receivers ne font pas de requête HTTP : ils délèguent au worker.
 
@@ -62,7 +60,7 @@ Pour une validation sur téléphone :
 3. Ajouter un widget et comparer ses directions et horaires à l'aperçu.
 4. Attendre plus de 30 secondes, cliquer sur actualiser et vérifier le compteur de l'API concernée.
 5. Couper le réseau : vérifier les données anciennes ou l'état indisponible, sans faux horaire.
-6. Verrouiller le téléphone : vérifier l'arrêt des appels, puis la reprise au déverrouillage.
+6. Quitter l’app, puis vérifier la progression du compteur. Couper Internet et vérifier que le compteur reste stable, puis rétablir la connexion et attendre la reprise.
 7. Vérifier les informations trafic, les pastilles regroupées, leur rotation et les trois modes de thème.
 
 La disponibilité réelle des passages et des messages dépend du producteur PRIM. Les tests simulés et la compilation ne remplacent pas la validation authentifiée sur un téléphone.
@@ -77,6 +75,6 @@ Une course momentanément absente reste disponible à partir de sa dernière obs
 
 À l'heure d'arrivée estimée précédemment chargée, le panneau affiche « À QUAI » pendant dix secondes, puis passe au train suivant. Cette durée d’affichage est fixée à dix secondes. Elle ne représente pas une durée moyenne d’arrêt mesurée : l’indication peut être calculée à partir de la prévision ou confirmée par `VehicleAtStop`. Les détails du suivi ne sont pas affichés sous les horaires. Les horaires théoriques seuls ne produisent pas de présence estimée.
 
-Le passage à quai et sa fin sont des transitions locales : aucun appel API supplémentaire n'est nécessaire. L'aperçu vérifie ses états chaque seconde lorsqu'il est visible et déverrouillé. Le widget programme un redessin local aux changements utiles ; Android peut suspendre le processus et différer ce redessin. La règle d'absence de requêtes téléphone verrouillé reste inchangée.
+Le passage à quai et sa fin sont des transitions locales : aucun appel API supplémentaire n'est nécessaire. L'aperçu vérifie ses états chaque seconde lorsqu'il est visible et déverrouillé. Le widget programme un redessin local aux changements utiles ; Android peut suspendre le processus et différer ce redessin.
 
 Le cache des passages utilise la version 2, avec des identités indépendantes des horaires. Le premier chargement réseau reconstitue les données ; les préférences et la clé restent conservées. Les métadonnées de suivi sont persistées avec les passages pour supporter un redémarrage du processus.

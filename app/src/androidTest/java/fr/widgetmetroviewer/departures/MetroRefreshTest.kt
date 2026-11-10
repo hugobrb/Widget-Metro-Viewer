@@ -12,9 +12,9 @@ import org.junit.runner.RunWith
 import java.util.concurrent.TimeUnit
 @RunWith(AndroidJUnit4::class)
 class MetroRefreshTest {
-    @Test fun minuteRefreshIsDelayedAndNetworkConstrainedWithoutSecretInput() {
-        val request = MetroRefreshScheduler.minuteRequest()
-        assertEquals(60_000L, request.workSpec.initialDelay)
+    @Test fun refreshIsDelayedAndNetworkConstrainedWithoutSecretInput() {
+        val request = MetroRefreshScheduler.delayedRequest()
+        assertEquals(30_000L, request.workSpec.initialDelay)
         assertFalse(request.workSpec.isPeriodic)
         assertEquals(NetworkType.CONNECTED, request.workSpec.constraints.requiredNetworkType)
         assertTrue(request.workSpec.input.keyValueMap.isEmpty())

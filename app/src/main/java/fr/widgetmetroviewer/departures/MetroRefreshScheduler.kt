@@ -19,15 +19,9 @@ internal object MetroRefreshScheduler {
     private val constraints = Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()
 
     fun configurationChanged(context: Context) {
-        MetroRefreshVisibility.stateChanged(context)
-        launchSynchronization(context, replace = true)
-    }
-    fun screenStateChanged(context: Context) = launchSynchronization(context)
-
-    private fun launchSynchronization(context: Context, replace: Boolean = false) {
         val app = context.applicationContext
         scope.launch {
-            try { synchronize(app, immediate = MetroPhoneState.canRefresh(app), replace = replace) }
+            try { synchronize(app, immediate = true, replace = true) }
             catch (error: CancellationException) { throw error }
             catch (_: Exception) { MetroWidgetProvider.refreshAll(app, loadingOverride = false) }
         }
@@ -55,18 +49,14 @@ internal object MetroRefreshScheduler {
                 MetroWidgetProvider.refreshAll(context, loadingOverride = false)
                 return@withLock
             }
-            // Filet de reprise persistant après arrêt du processus. Aucun appel si verrouillé.
+            // Filet de reprise persistant après arrêt du processus.
             val periodic = PeriodicWorkRequestBuilder<MetroRefreshWorker>(MetroRefreshPolicy.PERIOD_MINUTES, TimeUnit.MINUTES)
                 .setInitialDelay(MetroRefreshPolicy.PERIOD_MINUTES, TimeUnit.MINUTES)
                 .setConstraints(constraints).build()
             wm.enqueueUniquePeriodicWork(PERIODIC, ExistingPeriodicWorkPolicy.KEEP, periodic).await()
-            if (replace || !MetroPhoneState.canRefresh(context)) {
+            if (replace) {
                 wm.cancelUniqueWork(LOOP).await()
                 wm.cancelUniqueWork(IMMEDIATE).await()
-            }
-            if (!MetroPhoneState.canRefresh(context)) {
-                MetroWidgetProvider.refreshAll(context, loadingOverride = false)
-                return@withLock
             }
             if (immediate) {
                 val running = wm.getWorkInfosForUniqueWork(IMMEDIATE).get(5, TimeUnit.SECONDS)
@@ -83,7 +73,7 @@ internal object MetroRefreshScheduler {
 
     suspend fun scheduleNext(context: Context) = withContext(Dispatchers.IO) {
         scheduling.withLock {
-            if (eligible(context) && MetroPhoneState.canRefresh(context))
+            if (eligible(context))
                 enqueueNext(WorkManager.getInstance(context), MetroRefreshPolicy.INTERVAL_MILLIS)
         }
     }
@@ -93,7 +83,7 @@ internal object MetroRefreshScheduler {
         // Un seul successeur : les demandes manuelles et périodiques ne doublent pas la chaîne.
         if (work.any { it.state == WorkInfo.State.ENQUEUED || it.state == WorkInfo.State.BLOCKED }) return
         val delay = minimumDelay
-        val request = minuteRequest(delay)
+        val request = delayedRequest(delay)
         wm.enqueueUniqueWork(LOOP, ExistingWorkPolicy.APPEND_OR_REPLACE, request).await()
     }
 
@@ -106,7 +96,7 @@ internal object MetroRefreshScheduler {
         return builder.build()
     }
 
-    internal fun minuteRequest(delay: Long = MetroRefreshPolicy.INTERVAL_MILLIS): OneTimeWorkRequest =
+    internal fun delayedRequest(delay: Long = MetroRefreshPolicy.INTERVAL_MILLIS): OneTimeWorkRequest =
         OneTimeWorkRequestBuilder<MetroRefreshWorker>().setConstraints(constraints)
             .setInitialDelay(delay, TimeUnit.MILLISECONDS).build()
 

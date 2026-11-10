@@ -137,7 +137,7 @@ internal object MetroPanelRenderer {
         rect(0f, 750f, WIDTH, 99f, Color.rgb(207, 199, 0))
         circle(70f, 797f, 18f, if (panel.demo || panel.trafficAlert == false) green else if (panel.trafficAlert == true) Color.rgb(218, 87, 0) else grey)
         text(panel.footer, 110f, 811f, 38f, Color.BLACK, true, 1050f)
-        text(panel.tag, 1230f, 804f, 28f, Color.BLACK, true, 570f)
+        text(panel.footerTag, 1230f, 804f, 28f, Color.BLACK, true, 570f)
 
         canvas.restore()
     }

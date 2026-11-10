@@ -8,7 +8,7 @@ import java.time.Instant
 
 internal data class IdfmLineResult(val response: IdfmResponse, val fetchedAt: Instant? = null, val fromCache: Boolean = false)
 
-/** Un échange par ligne, réutilisable lorsque la sélection de station change pendant la minute. */
+/** Un échange par ligne, réutilisable lorsque la sélection de station change pendant 30 secondes. */
 internal class IdfmLineSource(private val api: IdfmApiClient, private val usage: IdfmApiUsage,
                               private val clock: Clock) {
     private data class Cached(val lineRef: String, val at: Instant, val response: IdfmResponse.Success)
@@ -16,9 +16,9 @@ internal class IdfmLineSource(private val api: IdfmApiClient, private val usage:
     @Volatile private var cached: Cached? = null
     private val revision = java.util.concurrent.atomic.AtomicLong()
     fun invalidate() { revision.incrementAndGet(); cached = null }
-    suspend fun fetch(key: String, lineRef: String, forceRefresh: Boolean = false): IdfmLineResult = mutex.withLock {
+    suspend fun fetch(key: String, lineRef: String): IdfmLineResult = mutex.withLock {
         cached?.let {
-            if (it.lineRef == lineRef && Duration.between(it.at, clock.instant()).let { age -> !age.isNegative && age < (if (forceRefresh) Duration.ofSeconds(30) else Duration.ofMinutes(1)) })
+            if (it.lineRef == lineRef && Duration.between(it.at, clock.instant()).let { age -> !age.isNegative && age < Duration.ofMillis(MetroRefreshPolicy.INTERVAL_MILLIS) })
                 return@withLock IdfmLineResult(it.response, it.at, fromCache = true)
         }
         val budget = usage.read()

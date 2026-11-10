@@ -10,7 +10,7 @@ class MetroRefreshWorker(context: Context, parameters: WorkerParameters) : Corou
     override suspend fun doWork(): Result {
         val context = applicationContext
         try {
-            if (!MetroPhoneState.canRefresh(context) || !MetroRefreshScheduler.eligible(context)) {
+            if (!MetroRefreshScheduler.eligible(context)) {
                 MetroWidgetProvider.publishNow(context, loading = false)
                 return Result.success()
             }

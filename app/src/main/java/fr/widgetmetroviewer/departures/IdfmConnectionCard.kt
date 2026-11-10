@@ -43,7 +43,7 @@ internal fun IdfmConnectionCard(selectedStation: String? = null, selectedLine: S
     val context = LocalContext.current
     val store = remember { IdfmKeyStore(context.applicationContext) }
     val scope = actionScope
-    val api = remember { IdfmApiClient(requestAllowed = { MetroPhoneState.canRefresh(context) }) }
+    val api = remember { IdfmApiClient(requestAllowed = { MetroInternetState.isConnected(context) }) }
     val usageStore = remember { IdfmApiUsage(context.applicationContext) }
     var references by uiState.references
     val target = remember(references, selectedLine, selectedStation) {

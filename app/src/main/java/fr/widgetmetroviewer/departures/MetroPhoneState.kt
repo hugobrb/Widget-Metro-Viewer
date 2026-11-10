@@ -6,7 +6,6 @@ import android.os.PowerManager
 
 /** Écran réellement interactif, sans écran de verrouillage (y compris sans code PIN). */
 internal object MetroPhoneState {
-    fun canRefresh(context: Context): Boolean = isUnlocked(context) && MetroRefreshVisibility.isAllowed(context)
 
     fun isUnlocked(context: Context): Boolean = runCatching {
         val power = context.getSystemService(PowerManager::class.java)

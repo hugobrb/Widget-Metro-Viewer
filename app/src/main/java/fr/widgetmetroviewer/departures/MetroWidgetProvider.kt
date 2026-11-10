@@ -30,7 +30,6 @@ class MetroWidgetProvider : AppWidgetProvider() {
         refreshFromBroadcast(context)
     }
     override fun onDisabled(context: Context) {
-        MetroRefreshVisibility.stateChanged(context)
         val pending = goAsync()
         scope.launch {
             try { withTimeout(8000) { MetroRefreshScheduler.cancel(context.applicationContext) } }
@@ -42,7 +41,6 @@ class MetroWidgetProvider : AppWidgetProvider() {
         if (intent.action in listOf(Intent.ACTION_TIME_CHANGED, Intent.ACTION_TIMEZONE_CHANGED, Intent.ACTION_DATE_CHANGED)) refreshFromBroadcast(context)
     }
     private fun refreshFromBroadcast(context: Context, request: Boolean = false) {
-        MetroRefreshVisibility.stateChanged(context)
         val pending = goAsync()
         scope.launch {
             try { withTimeout(8000) {
@@ -111,7 +109,7 @@ class MetroWidgetProvider : AppWidgetProvider() {
                 val refresh = PendingIntent.getBroadcast(context, 1,
                     Intent(context, MetroRefreshReceiver::class.java).setAction(MetroRefreshReceiver.ACTION),
                     PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
-                views.setOnClickPendingIntent(R.id.widget_refresh, if (MetroRefreshVisibility.hasUsageAccess(context)) refresh else open)
+                views.setOnClickPendingIntent(R.id.widget_refresh, refresh)
                 // Les travaux en attente ne doivent jamais bloquer les clics suivants.
                 views.setBoolean(R.id.widget_refresh, "setEnabled", true)
                 views.setViewVisibility(R.id.widget_refresh_container, View.VISIBLE)
@@ -123,10 +121,10 @@ class MetroWidgetProvider : AppWidgetProvider() {
                 manager.updateAppWidget(ids, views)
                 localRefresh?.cancel()
                 val boundary = nextLocalChange
-                if (boundary != null && MetroPhoneState.canRefresh(context)) localRefresh = scope.launch {
+                if (boundary != null && MetroPhoneState.isUnlocked(context)) localRefresh = scope.launch {
                     delay(Duration.between(Instant.now(), boundary).toMillis().coerceAtLeast(1))
                     // Transition visuelle locale, sans appel PRIM. Android peut suspendre le processus.
-                    if (MetroPhoneState.canRefresh(context)) refreshAll(context)
+                    if (MetroPhoneState.isUnlocked(context)) refreshAll(context)
                 }
             }
         }

@@ -3,6 +3,8 @@ package fr.widgetmetroviewer.departures
 import java.time.Duration
 import java.time.Instant
 import java.time.ZoneId
+import java.time.format.DateTimeFormatter
+import java.util.Locale
 
 internal data class MetroPanelColumn(
     val destinations: List<String>,
@@ -24,11 +26,16 @@ internal data class MetroPanelData(
     val loading: Boolean = false,
     val trafficAlert: Boolean? = null,
     val informationLines: List<String> = emptyList(),
-    val informationNotices: List<MetroTrafficNotice> = emptyList()
-)
+    val informationNotices: List<MetroTrafficNotice> = emptyList(),
+    val lastRefreshTime: String? = null
+) {
+    val footerTag: String get() = lastRefreshTime?.let { "$tag · $it" } ?: tag
+}
 
 /** Présentation commune des horaires pour l’aperçu et le widget. */
 internal object MetroPanelPresentation {
+    private val refreshTimeFormat = DateTimeFormatter.ofPattern("HH:mm:ss", Locale.ROOT)
+
     fun build(station: String, line: String, nominal: Pair<MetroDirection, MetroDirection>,
               result: DeparturesResult?, now: Instant, loading: Boolean = false,
               zone: ZoneId = ZoneId.systemDefault()): MetroPanelData {
@@ -114,7 +121,8 @@ internal object MetroPanelPresentation {
         return MetroPanelData(column(DepartureDirection.FORWARD, nominal.first),
             column(DepartureDirection.BACKWARD, nominal.second), false,
             board.footer, tag, information, loading, board.alert,
-            board.notices.getOrNull(messageIndex)?.lines.orEmpty(), board.notices)
+            board.notices.getOrNull(messageIndex)?.lines.orEmpty(), board.notices,
+            lastRefreshTime = snapshot?.let { refreshTimeFormat.withZone(zone).format(it.fetchedAt) })
     }
 
     fun description(station: String, line: String, panel: MetroPanelData): String {
@@ -122,6 +130,7 @@ internal object MetroPanelPresentation {
             (column.value?.let { "$it ${column.unit}, " }.orEmpty()) + column.detail + ". " +
             column.following + " " + column.followingDestination + ". "
         return "Ligne ${MetroLineStyles.label(line)}, $station. " + describe(panel.first) + describe(panel.second) +
-            panel.footer + ". " + panel.tag + ". " + panel.information
+            panel.footer + ". " + panel.tag + ". " +
+            (panel.lastRefreshTime?.let { "Dernière actualisation à $it. " } ?: "") + panel.information
     }
 }

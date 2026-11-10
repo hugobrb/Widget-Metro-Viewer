@@ -91,7 +91,7 @@ class IdfmOptimizationTest {
         }
     }
 
-    @Test fun manualRefreshBypassesMinuteCacheButKeepsThirtySecondProtection() = runBlocking {
+    @Test fun lineCacheDeduplicatesRequestsWithinThirtySeconds() = runBlocking {
         val clock = TestClock()
         val name = "manual_refresh_" + UUID.randomUUID() + ".json"
         val usage = IdfmApiUsage(context, name, clock, IdfmApiService.LINE)
@@ -101,13 +101,12 @@ class IdfmOptimizationTest {
             val line = "STIF:Line::C01381:"
             source.fetch("test_only", line)
             clock.now = clock.now.plusSeconds(20)
-            assertTrue(source.fetch("test_only", line, forceRefresh = true).fromCache)
-            assertEquals(1, calls)
-            clock.now = clock.now.plusSeconds(11)
             assertTrue(source.fetch("test_only", line).fromCache)
-            assertFalse(source.fetch("test_only", line, forceRefresh = true).fromCache)
+            assertEquals(1, calls)
+            clock.now = clock.now.plusSeconds(10)
+            assertFalse(source.fetch("test_only", line).fromCache)
             assertEquals(2, calls)
-            assertTrue(source.fetch("test_only", line, forceRefresh = true).fromCache)
+            assertTrue(source.fetch("test_only", line).fromCache)
             assertEquals(2, calls)
             assertEquals(2, usage.read().attempts)
         } finally { File(context.noBackupFilesDir, name).delete() }

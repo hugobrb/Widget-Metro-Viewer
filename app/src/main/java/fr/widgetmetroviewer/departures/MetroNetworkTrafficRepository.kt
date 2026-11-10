@@ -16,7 +16,7 @@ import java.time.Duration
 import java.time.Instant
 
 internal class MetroNetworkTrafficRepository(context: Context,
-    private val api: IdfmApiClient = IdfmApiClient(requestAllowed = { MetroPhoneState.canRefresh(context) }),
+    private val api: IdfmApiClient = IdfmApiClient(requestAllowed = { MetroInternetState.isConnected(context) }),
     private val keyStore: IdfmKeyStore = IdfmKeyStore(context),
     private val usage: IdfmApiUsage = IdfmApiUsage(context, service = IdfmApiService.TRAFFIC_REPORTS),
     private val clock: Clock = Clock.systemUTC(), fileName: String = "idfm_metro_circulation.json") {

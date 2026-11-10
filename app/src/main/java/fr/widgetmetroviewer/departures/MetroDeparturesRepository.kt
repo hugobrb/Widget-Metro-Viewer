@@ -26,7 +26,7 @@ internal data class DeparturesResult(
 /** Instance partagée application/widget ; aucun abonnement réseau ou travail périodique lancé ici. */
 internal class MetroDeparturesRepository internal constructor(
     context: Context,
-    private val api: IdfmApiClient = IdfmApiClient(requestAllowed = { MetroPhoneState.canRefresh(context) }),
+    private val api: IdfmApiClient = IdfmApiClient(requestAllowed = { MetroInternetState.isConnected(context) }),
     private val keyStore: IdfmKeyStore = IdfmKeyStore(context),
     private val usage: IdfmApiUsage = IdfmApiUsage(context),
     private val cache: MetroDeparturesCache = MetroDeparturesCache(context),
@@ -85,12 +85,12 @@ internal class MetroDeparturesRepository internal constructor(
                     val age = previous?.let { Duration.between(it.fetchedAt, now) }
                     val notExpired = previous?.let { it.departures.none { item -> !item.withdrawn } || it.departures.any { item -> item.isUpcoming(now) } } == true
                     if (lastFailure == null && previous != null && age != null && !age.isNegative && notExpired &&
-                        ((!forceRefresh && age <= freshFor) || previous.fetchedAt >= startedAt ||
+                        ((!forceRefresh && age < freshFor) || previous.fetchedAt >= startedAt ||
                             (forceRefresh && age < Duration.ofSeconds(30)))) {
                         return@result describe(previous, DeparturesOrigin.CACHE_FRESH)
                     }
                     if (preferLine) {
-                        val lineResult = lineSource.fetch(secret, target.lineRef, forceRefresh = forceRefresh)
+                        val lineResult = lineSource.fetch(secret, target.lineRef)
                         when (val response = lineResult.response) {
                             is IdfmResponse.Success -> {
                                 val batch = runCatching { IdfmLineDeparturesParser.parse(response.body, target.lineRef, target.monitoringRefs, clock.instant()) }.getOrNull()

@@ -71,7 +71,7 @@ internal class IdfmApiClient(
                                 validate: (String) -> IdfmTestResult, onAttempt: () -> Unit): IdfmResponse =
         kotlinx.coroutines.coroutineScope<IdfmResponse> {
             if (!requestAllowed()) return@coroutineScope IdfmResponse.Failure(
-                IdfmTestResult(IdfmTestStatus.PAUSED, "Actualisation en pause : panneau non visible ou téléphone verrouillé."))
+                IdfmTestResult(IdfmTestStatus.PAUSED, "Actualisation en attente d’une connexion Internet."))
             val owner = kotlin.coroutines.coroutineContext[kotlinx.coroutines.Job]!!
             val monitor = launch {
                 while (isActive) {
@@ -95,7 +95,7 @@ internal class IdfmApiClient(
                                 connection.requestMethod = "GET"
                                 connection.setRequestProperty("Accept", "application/json")
                                 connection.setRequestProperty("apikey", key)
-                                if (!requestAllowed()) throw PhoneLocked()
+                                if (!requestAllowed()) throw InternetUnavailable()
                                 onAttempt()
                                 val code = connection.responseCode
                                 if (code != 200) IdfmResponse.Failure(httpError(code, connection.getHeaderField("Retry-After"))) else {
@@ -116,8 +116,8 @@ internal class IdfmApiClient(
                                     else IdfmResponse.Failure(validation)
                                 }
                             } finally { connection.disconnect() }
-                        } catch (_: PhoneLocked) {
-                            IdfmResponse.Failure(IdfmTestResult(IdfmTestStatus.PAUSED, "Actualisation en pause : panneau non visible ou téléphone verrouillé."))
+                        } catch (_: InternetUnavailable) {
+                            IdfmResponse.Failure(IdfmTestResult(IdfmTestStatus.PAUSED, "Actualisation en attente d’une connexion Internet."))
                         } catch (_: IdfmLocalQuotaException) {
                             IdfmResponse.Failure(IdfmTestResult(IdfmTestStatus.QUOTA, "Le plafond local de requêtes est atteint.", 0))
                         } catch (_: SocketTimeoutException) {
@@ -143,7 +143,7 @@ internal class IdfmApiClient(
             } finally { monitor.cancel() }
         }
 
-    private class PhoneLocked : Exception()
+    private class InternetUnavailable : Exception()
     private class InvalidResponse : IOException()
 
     companion object {

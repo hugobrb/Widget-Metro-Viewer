@@ -3,6 +3,7 @@ package fr.widgetmetroviewer.departures
 import org.junit.Assert.*
 import org.junit.Test
 import java.time.Instant
+import java.time.ZoneId
 
 class MetroDepartureTrackerTest {
     private val now = Instant.parse("2026-11-01T12:00:00Z")
@@ -75,6 +76,20 @@ class MetroDepartureTrackerTest {
         val state = snapshot(listOf(train(seconds = 20)))
         assertEquals(now.plusSeconds(20), state.nextVisualChange(now))
         assertEquals(now.plusSeconds(30), state.nextVisualChange(now.plusSeconds(20)))
+    }
+    @Test fun footerUsesTheLastFetchTimeEvenWhenCachedDataIsStale() {
+        val fetchedAt = now.plusSeconds(42)
+        val cached = snapshot(listOf(train()), fetchedAt)
+        val nominal = MetroDirection(listOf("Rosny-Bois-Perrier"), true) to MetroDirection(listOf("Châtelet"), true)
+        val zone = ZoneId.of("Europe/Paris")
+        val fresh = DeparturesResult(DeparturesState.DATA, cached, DeparturesOrigin.CACHE_FRESH, "Test")
+        val stale = fresh.copy(state = DeparturesState.UNAVAILABLE, origin = DeparturesOrigin.CACHE_STALE)
+        assertEquals("PROCHAINS PASSAGES · 13:00:42",
+            MetroPanelPresentation.build(cached.station, "11", nominal, fresh, now.plusSeconds(50), zone = zone).footerTag)
+        assertEquals("DONNÉES ANCIENNES · 13:00:42",
+            MetroPanelPresentation.build(cached.station, "11", nominal, stale, now.plusSeconds(300), zone = zone).footerTag)
+        assertEquals("INDISPONIBLE",
+            MetroPanelPresentation.build(cached.station, "11", nominal, null, now, zone = zone).footerTag)
     }
     @Test fun sameJourneyAtDifferentQuaysNeverSharesItsState() {
         val a = train(quay = "a")

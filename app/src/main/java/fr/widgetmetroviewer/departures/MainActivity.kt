@@ -403,7 +403,7 @@ private fun MetroPreview(station: MetroStation, line: String, revision: Int,
         lifecycleOwner.lifecycle.repeatOnLifecycle(androidx.lifecycle.Lifecycle.State.STARTED) {
             while (isActive) {
                 delay(1000)
-                if (MetroPhoneState.canRefresh(context)) now = Instant.now()
+                if (MetroPhoneState.isUnlocked(context)) now = Instant.now()
             }
         }
     }
@@ -411,7 +411,7 @@ private fun MetroPreview(station: MetroStation, line: String, revision: Int,
         lifecycleOwner.lifecycle.repeatOnLifecycle(androidx.lifecycle.Lifecycle.State.STARTED) {
             while (isActive) {
                 delay(MetroRefreshPolicy.INTERVAL_MILLIS)
-                if (MetroPhoneState.canRefresh(context)) resumeRevision++
+                resumeRevision++
             }
         }
     }

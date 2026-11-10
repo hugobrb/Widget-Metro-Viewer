@@ -46,8 +46,6 @@ internal fun MetroSettingsPanel(themeMode: String, onThemeChange: (String) -> Un
                             if (themeMode == "auto") Text("Suit le thème du téléphone.", fontSize = 12.sp,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant)
                             HorizontalDivider()
-                            MetroRefreshAccessSection()
-                            HorizontalDivider()
                             IdfmUsageSection()
                             Spacer(Modifier.height(8.dp))
                         }
